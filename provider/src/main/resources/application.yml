@@ -1,0 +1,14 @@
+#spring:
+#  profiles: beta #激活环境
+
+server:
+  port: 8082
+
+  application:
+    name: project01
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

@@ -1,0 +1,12 @@
+#spring:
+#  profiles: beta #激活环境
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: eureka-server #eureka实例名
+  client:
+    register-with-eureka: false #不把自己注册在注册中心
+    fetch-registry: false #本身是服务中心,不需要从eureka获取信息
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
