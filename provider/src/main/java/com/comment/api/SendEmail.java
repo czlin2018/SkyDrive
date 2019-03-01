@@ -1,4 +1,4 @@
-package com.consumer.comment.util;
+package com.comment.api;
 
 /**
  * @描述:

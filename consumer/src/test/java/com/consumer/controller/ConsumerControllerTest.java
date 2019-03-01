@@ -1,14 +1,10 @@
 package com.consumer.controller;
 
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-import static org.junit.Assert.*;
 
 /**
  * @描述:
@@ -18,6 +14,11 @@ import static org.junit.Assert.*;
  * @创建时间: 下午12:06
  */
 public class ConsumerControllerTest{
+
+
+    @Autowired
+    ConsumerController consumerController;
+
     @Test
     public  void run1() {
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
@@ -37,8 +38,11 @@ public class ConsumerControllerTest{
                     }
                 });
             }
-
-
         }
+    }
+
+    @Test
+    public void main (){
+        consumerController.hi("MY");
     }
 }

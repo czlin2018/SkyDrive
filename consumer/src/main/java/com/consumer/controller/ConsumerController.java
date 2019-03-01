@@ -19,6 +19,7 @@ public class ConsumerController{
 
 @GetMapping(value = "/hi")
 public String hi  ( String  name){
+    System.out.println("hi");
     String forObject = restTemplate.getForObject("http://PROJECT01/hello", String.class);
     return  name+"say"+forObject;
 

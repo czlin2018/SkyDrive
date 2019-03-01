@@ -1,5 +1,6 @@
 package com.consumer.comment.util;
 
+import com.consumer.comment.api.SendEmail;
 import org.junit.Test;
 
 import java.security.GeneralSecurityException;
