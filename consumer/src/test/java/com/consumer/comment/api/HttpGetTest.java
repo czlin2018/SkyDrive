@@ -1,6 +1,6 @@
 package com.consumer.comment.api;
 
-import org.junit.Test;
+import com.web.comment.api.HttpGet;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +14,7 @@ import java.util.Map;
  */
 public class HttpGetTest{
 
-    @Test
+    /// @Test
     public void sendGet (){
         Map map = new HashMap();
         map.put("name", "1111");

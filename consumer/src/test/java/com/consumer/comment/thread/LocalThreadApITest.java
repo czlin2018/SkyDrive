@@ -1,6 +1,8 @@
 package com.consumer.comment.thread;
 
-import org.junit.Test;
+import com.web.comment.thread.LocalThreadApi;
+import com.web.comment.thread.LocalThreadPollApI;
+import com.web.comment.thread.ThreadTask;
 
 /**
  * @描述:
@@ -10,12 +12,12 @@ import org.junit.Test;
  * @创建时间: 下午4:15
  */
 public class LocalThreadApITest{
-    @Test
+    //@Test
     public void run1 (){
         LocalThreadPollApI.createThread(4, new ThreadTask());
     }
 
-    @Test
+    //@Test
     public void run2 (){
         LocalThreadApi.createThread(1);
     }

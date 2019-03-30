@@ -1,7 +1,5 @@
 package com.consumer.common;
 
-import org.junit.Test;
-
 /**
  * @描述:
  * @公司: lumi
@@ -26,7 +24,8 @@ class Thread1 extends Thread {
             }
         }
     }
-    @Test
+
+    //@Test
     public static void main1(String[] arg){
         for(int i=0;i<1000;i++){
         Thread1 m1=new Thread1("A"+i);
@@ -34,7 +33,7 @@ class Thread1 extends Thread {
         }
     }
 
-    @Test
+    // @Test
     public static void main(String[] arg){
         for(int i=0;i<1000;i++){
             Thread1 m1=new Thread1("A"+i);

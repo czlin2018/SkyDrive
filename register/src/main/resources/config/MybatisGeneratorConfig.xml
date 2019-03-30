@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+===================================================================
+
+    用法：cd到项目根目录下运行命令 mvn mybatis-generator:generate
+        或 在IDE中新增一个maven配置 目录为当前项目根目录 命令行为上面的命令行
+
+===================================================================
+-->
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+
+    <!-- 数据库驱动包位置 -->
+    <classPathEntry
+            location="/home/czl/文档/skyDrive/register/src/main/resources/config/mysql-connector-java-6.0.6.jar"/>
+
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <!-- TKmybatis配置 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+        </plugin>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+        <!-- 数据库链接URL、用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://47.106.36.62:3306/skyDrive?useUnicode=true&amp;useSSL=false&amp;characterEncoding=UTF-8&amp;tinyInt1isBit=false&amp;nullNamePatternMatchesAll=true"
+                        userId="root" password="root"/>
+        <!-- 生成模型的包名和位置 targetProject是相对路径或绝对路径-->
+        <javaModelGenerator targetPackage="com.web.entity"
+                            targetProject="src/main/java"/>
+        <!-- 生成的映射文件包名和位置 targetProject是相对路径或绝对路径-->
+        <sqlMapGenerator targetPackage="sqlMap" targetProject="src/main/resources"/>
+        <!-- 生成service的包名和位置 targetProject是相对路径或绝对路径-->
+        <javaClientGenerator targetPackage="com.web.mapper"
+                             targetProject="src/main/java" type="XMLMAPPER"/>
+
+        <!-- 要生成的表（可以使用多个table标签生成多张表） -->
+
+        <!--<table tableName="user_tb" domainObjectName="usertb"></table>-->
+        <table tableName="user" domainObjectName="user"></table>
+
+
+    </context>
+</generatorConfiguration>

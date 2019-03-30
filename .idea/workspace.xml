@@ -1,21 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a92ef1ca-022b-4152-80f9-9a0376719291" name="Default Changelist" comment="">
+    <list default="true" id="a92ef1ca-022b-4152-80f9-9a0376719291" name="Default Changelist" comment="完成份额后">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_51.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_core_4_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_aliyun_aliyun_java_sdk_dysmsapi_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_5_1_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_197.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_qiniu_qiniu_java_sdk_7_2_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_8_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_13_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_core_2_1_14.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_impl_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_5_1_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_33_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_33_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_33_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_33_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_33_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_33_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_2_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_persistence_api_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_6_0_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_1_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_1_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_1_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_1_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_1_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_1_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_1_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_1_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__tk_mybatis_mapper_3_5_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__tk_mybatis_mapper_spring_boot_autoconfigure_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__tk_mybatis_mapper_spring_boot_starter_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register/src/main/java/com/comment/api/BeanCopyUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register/src/main/java/com/comment/api/DateApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register/src/main/java/com/comment/api/QiniuUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register/src/main/java/com/comment/api/RedisUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register/src/main/java/com/comment/api/SmsUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register/src/main/java/com/comment/url/Url.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register/src/main/java/com/comment/util/PageDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register/src/main/java/com/comment/util/ResultDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register/src/main/java/com/comment/util/SysExcCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register/src/main/java/com/web/dto/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register/src/main/resources/config/MybatisGeneratorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/thread/ThreadTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/thread/ThreadTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/consumer/controller/ConsumerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/consumer/controller/ConsumerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/provider/src/main/java/com/comment/util/thread/LocalThreadApi.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provider/src/main/java/com/comment/util/thread/LocalThreadPollApI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provider/src/main/java/com/comment/util/thread/ThreadFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provider/src/main/java/com/comment/util/thread/ThreadTask.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/provider/src/main/java/com/provider/service/Service01.java" beforeDir="false" afterPath="$PROJECT_DIR$/provider/src/main/java/com/provider/service/Service01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/provider/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/provider/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/provider/src/test/java/com/comment/util/thread/LocalThreadApITest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/consumer/ConsumerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/web/ConsumerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/api/HttpGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/web/comment/api/HttpGet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/api/SendEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/web/comment/api/SendEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/thread/LocalThreadApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/web/comment/thread/LocalThreadApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/thread/LocalThreadPollApI.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/web/comment/thread/LocalThreadPollApI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/thread/ThreadFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/web/comment/thread/ThreadFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/thread/ThreadTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/web/comment/thread/ThreadTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/consumer/controller/ConsumerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/web/controller/ConsumerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/test/java/com/consumer/ConsumerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/api/HttpGetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/api/HttpGetTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/thread/LocalThreadApITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/thread/LocalThreadApITest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/util/SendEmailTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/util/SendEmailTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Thread1.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Thread1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Thread2.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Thread2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Thread3.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Thread3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/test/java/com/consumer/controller/ConsumerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/test/java/com/consumer/controller/ConsumerControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/register/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/register/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/src/main/java/com/provider/ProviderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/register/src/main/java/com/RegisterApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/src/main/java/com/provider/controller/Controller01.java" beforeDir="false" afterPath="$PROJECT_DIR$/register/src/main/java/com/web/controller/Controller01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/src/main/java/com/provider/service/Service01.java" beforeDir="false" afterPath="$PROJECT_DIR$/register/src/main/java/com/web/service/Service01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/register/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/src/test/java/com/provider/ProviderApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/register/src/test/java/com/provider/RegisterApplicationTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/eureka-server/target/" />
     <ignored path="$PROJECT_DIR$/provider/target/" />
     <ignored path="$PROJECT_DIR$/consumer/target/" />
+    <ignored path="$PROJECT_DIR$/register/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,40 +123,43 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="6" />
-          <entry key="cmd" value="1" />
-          <entry key="gitignore" value="1" />
-          <entry key="java" value="104" />
-          <entry key="mvnw" value="1" />
-          <entry key="xml" value="8" />
-          <entry key="yml" value="9" />
+          <entry key="class" value="10" />
+          <entry key="cmd" value="2" />
+          <entry key="gitignore" value="4" />
+          <entry key="iml" value="3" />
+          <entry key="java" value="153" />
+          <entry key="mvnw" value="2" />
+          <entry key="xml" value="18" />
+          <entry key="yml" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="6" />
-          <entry key="Git file" value="1" />
-          <entry key="JAVA" value="104" />
-          <entry key="PLAIN_TEXT" value="2" />
-          <entry key="XML" value="8" />
-          <entry key="YAML" value="9" />
+          <entry key="CLASS" value="10" />
+          <entry key="Git file" value="4" />
+          <entry key="IDEA_MODULE" value="3" />
+          <entry key="JAVA" value="153" />
+          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="XML" value="18" />
+          <entry key="YAML" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="16" />
-          <entry key="java" value="2052" />
-          <entry key="txt" value="67" />
-          <entry key="xml" value="32" />
-          <entry key="yml" value="88" />
+          <entry key="dummy" value="27" />
+          <entry key="java" value="2274" />
+          <entry key="txt" value="78" />
+          <entry key="xml" value="96" />
+          <entry key="yml" value="134" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2052" />
-          <entry key="PLAIN_TEXT" value="83" />
-          <entry key="XML" value="32" />
-          <entry key="YAML" value="88" />
+          <entry key="JAVA" value="2274" />
+          <entry key="PLAIN_TEXT" value="105" />
+          <entry key="SQL" value="3" />
+          <entry key="XML" value="93" />
+          <entry key="YAML" value="134" />
         </counts>
       </usages-collector>
     </session>
@@ -96,10 +167,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/consumer/controller/ConsumerController.java">
+        <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/api/HttpGetTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+            <state relative-caret-position="126">
+              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,31 +179,92 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/provider/controller/Controller01.java">
+        <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/util/SendEmailTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/provider/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="18" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="18" />
+            <state relative-caret-position="357">
+              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/provider/service/Service01.java">
+        <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/controller/ConsumerControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+              <folding>
+                <element signature="e#1122#1123#0" expanded="true" />
+                <element signature="e#1165#1166#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/thread/LocalThreadApITest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
               <folding>
-                <element signature="e#227#228#0" expanded="true" />
-                <element signature="e#257#258#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#456#457#0" expanded="true" />
+                <element signature="e#502#503#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/web/ConsumerApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/web/controller/ConsumerController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="34" selection-start-line="34" selection-end-line="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/service/Service01.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#398#399#0" expanded="true" />
+                <element signature="e#440#441#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/web/comment/thread/LocalThreadApi.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -157,6 +289,7 @@
       <find>shutdown</find>
       <find>82</find>
       <find>System</find>
+      <find>SendEmailTest</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -165,48 +298,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/eureka-server/src/main/java/com/eurekaserver/EurekaServerApplication.java" />
-        <option value="$PROJECT_DIR$/provider/src/main/java/com/provider/controller/Controller01.java" />
-        <option value="$PROJECT_DIR$/eureka-server/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/ConsumerApplication.java" />
-        <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/ConsumerController.java" />
-        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/ThreadExcutor.java" />
-        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Worker.java" />
-        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/controller/a.java" />
-        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/controller/TestThread.java" />
-        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/RunnableDemo.java" />
-        <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/email/去.java" />
-        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/email/SendEmailTest.java" />
-        <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/email/SendEmail.java" />
-        <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/util/SendEmail.java" />
-        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/ThreadPoll.java" />
-        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Thread2.java" />
-        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Thread3.java" />
-        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/q.java" />
-        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Thread4.java" />
-        <option value="$PROJECT_DIR$/provider/src/main/java/com/provider/util/SendEmail.java" />
-        <option value="$PROJECT_DIR$/provider/src/main/java/com/comment/util/SendEmail.java" />
-        <option value="$PROJECT_DIR$/provider/src/main/java/com/comment/api/SendEmail.java" />
-        <option value="$PROJECT_DIR$/provider/src/main/java/com/comment/util/ThrealPoll.java" />
-        <option value="$PROJECT_DIR$/provider/src/main/java/com/comment/util/thread/MyThreadFactory.java" />
-        <option value="$PROJECT_DIR$/provider/pom.xml" />
-        <option value="$PROJECT_DIR$/provider/src/main/java/com/comment/util/thread/ThreafTest.java" />
-        <option value="$PROJECT_DIR$/provider/src/test/java/com/comment/util/thread/LocalThreadApITest.java" />
         <option value="$PROJECT_DIR$/provider/src/main/java/com/comment/util/thread/LocalThreadApI.java" />
         <option value="$PROJECT_DIR$/provider/src/main/java/com/comment/util/thread/ThreadFactory.java" />
         <option value="$PROJECT_DIR$/consumer/pom.xml" />
-        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/util/SendEmailTest.java" />
-        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/controller/ConsumerControllerTest.java" />
         <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/thread/ThreadFactory.java" />
         <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/thread/LocalThreadApI.java" />
         <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/api/sendGet.java" />
         <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/api/a.java" />
-        <option value="$PROJECT_DIR$/consumer/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/api/HttpGetTest.java" />
         <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/thread/LocalThreadApITest1.java" />
         <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/thread/Thread2.java" />
         <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/api/HttpGet.java" />
-        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/thread/LocalThreadApITest.java" />
         <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/thread/LocalThreadApi.java" />
         <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/thread/LocalThreadPollApI.java" />
         <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/api/SendEmail.java" />
@@ -216,6 +317,38 @@
         <option value="$PROJECT_DIR$/provider/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/provider/src/main/java/com/provider/service/Service01.java" />
         <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/controller/ConsumerController.java" />
+        <option value="$PROJECT_DIR$/register/pom.xml" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/provider/ProviderApplication.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/mapper/userMapper.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/provider/mapper/userMapper.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/ProviderApplication.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/web/mapper/userMapper.java" />
+        <option value="$PROJECT_DIR$/register/src/main/resources/sqlMap/userMapper.xml" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/RegisterApplication.java" />
+        <option value="$PROJECT_DIR$/register/src/main/resources/config/MybatisGeneratorConfig.xml" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/comment/api/BeanCopyUtil.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/comment/util/PageDto.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/comment/util/ResultDto.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/comment/url/Url.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/web/entity/user.java" />
+        <option value="$PROJECT_DIR$/register/.gitignore" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/web/dto/UserDto.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/web/entity/User.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/web/service/Service01.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/web/mapper/UserMapper.java" />
+        <option value="$PROJECT_DIR$/register/src/main/resources/sqlMap/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/register/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/controller/ConsumerControllerTest.java" />
+        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/ConsumerApplicationTests.java" />
+        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Thread1.java" />
+        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Thread2.java" />
+        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Thread3.java" />
+        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/thread/LocalThreadApITest.java" />
+        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/api/HttpGetTest.java" />
+        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/util/SendEmailTest.java" />
+        <option value="$PROJECT_DIR$/consumer/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/web/controller/Controller01.java" />
+        <option value="$PROJECT_DIR$/consumer/src/main/java/com/web/controller/ConsumerController.java" />
       </list>
     </option>
   </component>
@@ -245,11 +378,11 @@
       <expand>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="provider" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="consumer" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="provider" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="consumer" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
       </expand>
@@ -277,29 +410,85 @@
           <expand>
             <path>
               <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
-              <item name="provider" type="462c0819:PsiDirectoryNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
-              <item name="provider" type="462c0819:PsiDirectoryNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
-              <item name="provider" type="462c0819:PsiDirectoryNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
-              <item name="provider" type="462c0819:PsiDirectoryNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
-              <item name="provider" type="462c0819:PsiDirectoryNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
+              <item name="consumer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
+              <item name="register" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
+              <item name="register" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
+              <item name="register" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
+              <item name="register" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
+              <item name="register" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -307,12 +496,32 @@
             </path>
             <path>
               <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
-              <item name="provider" type="462c0819:PsiDirectoryNode" />
+              <item name="register" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="provider" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
+              <item name="register" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
+              <item name="register" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -330,12 +539,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553930015947" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553938213055" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="ignore_missing_gitignore" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/桌面/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -343,6 +552,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="settings.saveactions" />
+    <property name="two.files.diff.last.used.file" value="$USER_HOME$/桌面/pom.xml" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -355,17 +565,26 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/register/src/main/resources/config" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.provider" />
+      <recent name="com" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.web.dto" />
+      <recent name="com.comment.url" />
       <recent name="com.consumer.comment.api" />
       <recent name="com.provider.util" />
       <recent name="com.consumer.common" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/register/src/main/java/com/comment/util" />
+      <recent name="$PROJECT_DIR$/register/src/main/java/com/comment/api" />
+      <recent name="$PROJECT_DIR$/register/src/main/resources" />
+      <recent name="$PROJECT_DIR$/register" />
       <recent name="$PROJECT_DIR$/provider/src/main/java/com/comment/util" />
-      <recent name="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment" />
-      <recent name="$PROJECT_DIR$/consumer/src/main/resources" />
-      <recent name="$PROJECT_DIR$/provider/src/main/resources" />
-      <recent name="$PROJECT_DIR$/eureka-server/src/main/resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -380,33 +599,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Consumer">
-    <configuration name="LocalThreadApi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.consumer.comment.thread.LocalThreadApi" />
-      <module name="consumer" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.consumer.comment.thread.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Thread2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.consumer.comment.thread.Thread2" />
-      <module name="consumer" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.consumer.comment.thread.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.Register">
     <configuration name="HttpGetTest.sendGet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="consumer" />
       <extension name="coverage">
@@ -463,6 +656,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Consumer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+      <module name="consumer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.ConsumerApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EurekaServer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="eureka-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.eurekaserver.EurekaServerApplication" />
@@ -471,9 +678,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Provider" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <configuration name="Register" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
       <module name="register" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.provider.ProviderApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.RegisterApplication" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -481,21 +694,19 @@
     </configuration>
     <list>
       <item itemvalue="Spring Boot.EurekaServer" />
-      <item itemvalue="Spring Boot.Provider" />
-      <item itemvalue="Spring Boot.Consumer" />
       <item itemvalue="JUnit.LocalThreadApITest.run1" />
       <item itemvalue="JUnit.HttpGetTest.sendGet" />
-      <item itemvalue="Application.Thread2" />
-      <item itemvalue="Application.LocalThreadApi" />
       <item itemvalue="JUnit.LocalThreadApITest.run2" />
+      <item itemvalue="Spring Boot.Consumer" />
+      <item itemvalue="Spring Boot.Register" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.Register" />
+        <item itemvalue="Spring Boot.Consumer" />
         <item itemvalue="JUnit.HttpGetTest.sendGet" />
         <item itemvalue="JUnit.LocalThreadApITest.run1" />
         <item itemvalue="JUnit.LocalThreadApITest.run2" />
-        <item itemvalue="Application.LocalThreadApi" />
-        <item itemvalue="Application.Thread2" />
       </list>
     </recent_temporary>
   </component>
@@ -520,7 +731,7 @@
       <workItem from="1551410590005" duration="19252000" />
       <workItem from="1551672008820" duration="3000" />
       <workItem from="1551672108844" duration="3000" />
-      <workItem from="1553913545264" duration="7178000" />
+      <workItem from="1553913545264" duration="15316000" />
     </task>
     <task id="LOCAL-00001" summary="springcloud初始代码">
       <created>1551267443757</created>
@@ -543,7 +754,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551435367995</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="功能分割">
+      <created>1553930075637</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1553930075637</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -579,12 +797,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54628000" />
+    <option name="totallyTimeSpent" value="62766000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="21" width="1920" height="1015" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.60745615" visible="true" weight="0.23297872" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.60745615" visible="true" weight="0.23297872" />
       <window_info id="Structure" order="1" sideWeight="0.4517007" side_tool="true" weight="0.17595147" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" sideWeight="0.50239235" side_tool="true" weight="0.29233316" />
@@ -594,9 +812,9 @@
       <window_info id="Capture Tool" order="7" />
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Problems" order="0" weight="0.32963374" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49936467" weight="0.31853497" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49202126" visible="true" weight="0.34406215" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49893618" weight="0.4472808" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49936467" weight="0.34295228" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49202126" weight="0.33962265" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49893618" visible="true" weight="0.37957823" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32963374" />
@@ -626,7 +844,7 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info anchor="right" id="CDI" order="8" weight="0.32984003" />
-      <window_info anchor="right" id="Maven Projects" order="9" weight="0.41702127" />
+      <window_info anchor="right" id="Maven Projects" order="9" weight="0.37659574" />
       <window_info anchor="right" id="Bean Validation" order="10" weight="0.45957446" />
       <window_info anchor="right" id="Database" order="11" side_tool="true" weight="0.10638298" />
     </layout>
@@ -641,264 +859,40 @@
     <MESSAGE value="springcloud初始代码" />
     <MESSAGE value="线程池+邮件api" />
     <MESSAGE value="1.加工厂类+普通多线程api &#10;2.模拟get请求api" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.加工厂类+普通多线程api &#10;2.模拟get请求api" />
+    <MESSAGE value="功能分割" />
+    <option name="LAST_COMMIT_MESSAGE" value="功能分割" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/provider/src/test/java/com/comment/util/thread/LocalThreadApITest.java</url>
+          <url>file://$PROJECT_DIR$/register/src/test/java/com/comment/util/thread/LocalThreadApITest.java</url>
           <line>12</line>
           <properties />
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/register/src/main/java/com/web/service/Service01.java</url>
+          <line>25</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/register/src/main/java/com/web/service/Service01.java</url>
+          <line>21</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/consumer/src/main/java/com/web/controller/ConsumerController.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/ThreadExcutor.java" />
-    <entry file="jar:///opt/java/jdk1.8.0_181/src.zip!/java/lang/Runnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="55" column="17" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///opt/java/jdk1.8.0_181/src.zip!/java/util/concurrent/Executor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="118" column="2" lean-forward="true" selection-start-line="118" selection-start-column="2" selection-end-line="118" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///opt/java/jdk1.8.0_181/src.zip!/java/util/concurrent/TimeUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="104" column="4" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/ThreadPoll.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///opt/java/jdk1.8.0_181/src.zip!/java/util/concurrent/AbstractExecutorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="70" column="60" selection-start-line="70" selection-start-column="60" selection-end-line="70" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///opt/java/jdk1.8.0_181/src.zip!/java/util/concurrent/ExecutorService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="136" column="17" selection-start-line="136" selection-start-column="17" selection-end-line="136" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/util/SendEmail.java" />
-    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Thread1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Thread2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Thread4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Thread3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="33" column="53" selection-start-line="32" selection-start-column="7" selection-end-line="33" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/comment/util/thread/ThreafTest.java" />
-    <entry file="jar:///opt/apache-maven-3.5.4/download/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar!/org/slf4j/helpers/Util.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///opt/apache-maven-3.5.4/download/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///opt/apache-maven-3.5.4/download/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar!/org/slf4j/helpers/SubstituteLoggerFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///opt/apache-maven-3.5.4/download/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar!/org/slf4j/LoggerFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="291" selection-start-line="291" selection-end-line="291" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/provider/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="44" selection-start-line="22" selection-start-column="7" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///opt/java/jdk1.8.0_181/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="747" selection-start-line="747" selection-end-line="747" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///opt/apache-maven-3.5.4/download/org/aspectj/aspectjweaver/1.9.2/aspectjweaver-1.9.2.jar!/org/aspectj/runtime/internal/cflowstack/ThreadStackFactoryImpl11.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///opt/java/jdk1.8.0_181/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="237" column="12" selection-start-line="237" selection-start-column="12" selection-end-line="237" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/util/SendEmailTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///opt/java/jdk1.8.0_181/src.zip!/java/util/concurrent/ThreadPoolExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///opt/java/jdk1.8.0_181/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="1966" selection-start-line="1966" selection-end-line="1966" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/controller/ConsumerControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/thread/ThreadFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///opt/java/jdk1.8.0_181/jre/lib/junit-4.10.jar!/org/junit/internal/builders/JUnit4Builder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/thread/Thread2.java" />
-    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/api/HttpGetTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="21" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/thread/LocalThreadApITest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-          <folding>
-            <element signature="e#214#215#0" expanded="true" />
-            <element signature="e#282#283#0" expanded="true" />
-            <element signature="e#318#319#0" expanded="true" />
-            <element signature="e#364#365#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/api/HttpGet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/api/SendEmail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/thread/LocalThreadPollApI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/thread/LocalThreadApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/comment/util/thread/LocalThreadApi.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
@@ -938,20 +932,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/thread/ThreadTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/consumer/ConsumerApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="19" column="36" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eureka-server/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -966,52 +946,318 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/provider/ProviderApplication.java">
+    <entry file="jar:///opt/apache-maven-3.5.4/download/org/springframework/spring-beans/5.1.5.RELEASE/spring-beans-5.1.5.RELEASE.jar!/org/springframework/beans/factory/support/ConstructorResolver.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="152">
+          <caret line="497" selection-start-line="497" selection-end-line="497" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/comment/api/SendEmail.java">
+    <entry file="jar:///opt/apache-maven-3.5.4/download/org/mybatis/spring/boot/mybatis-spring-boot-autoconfigure/1.0.0/mybatis-spring-boot-autoconfigure-1.0.0.jar!/org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-174">
+        <state relative-caret-position="194">
+          <caret line="68" selection-start-line="68" selection-end-line="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///opt/apache-maven-3.5.4/download/org/mybatis/mybatis/3.4.5/mybatis-3.4.5.jar!/org/apache/ibatis/session/SqlSessionFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/mvnw">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/mvnw.cmd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-714" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1751">
+          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/resources/config/MybatisGeneratorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="109" selection-start-line="17" selection-start-column="109" selection-end-line="17" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/web/comment/thread/ThreadTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/api/SendEmail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
           <caret line="22" column="22" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/consumer/controller/ConsumerController.java">
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/api/RedisUtil.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/api/DateApi.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/api/SmsUtils.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/api/QiniuUtil.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/api/BeanCopyUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        <state relative-caret-position="425">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/util/PageDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/util/SysExcCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/util/ResultDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/dto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/url/Url.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/register.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/RegisterApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/dto/UserDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="33" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/mapper/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/provider/service/Service01.java">
+    <entry file="file://$PROJECT_DIR$/register/src/main/resources/sqlMap/UserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="238">
+          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/web/comment/api/HttpGet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
           <folding>
-            <element signature="e#227#228#0" expanded="true" />
-            <element signature="e#257#258#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/provider/controller/Controller01.java">
+    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Thread1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+          <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/provider/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Thread2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Thread3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/Thread4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/common/ThreadPoll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/controller/ConsumerControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+          <folding>
+            <element signature="e#1122#1123#0" expanded="true" />
+            <element signature="e#1165#1166#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/thread/LocalThreadApITest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#502#503#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/web/comment/thread/LocalThreadApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/util/SendEmailTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/ConsumerApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/api/HttpGetTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/web/ConsumerApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="18" />
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/service/Service01.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#398#399#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/controller/Controller01.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+          <folding>
+            <element signature="e#693#694#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/web/controller/ConsumerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="34" selection-start-line="34" selection-end-line="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

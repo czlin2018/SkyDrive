@@ -1,5 +1,4 @@
 package com.consumer.common;
-import org.junit.Test;
 
 import static java.lang.Thread.sleep;
 
@@ -28,14 +27,16 @@ public class Thread2 implements Runnable{
             }
         }
     }
-    @Test
+
+    // @Test
     public static void main1(String[] arg){
         for(int i=0;i<1000;i++){
             Thread1 m1=new Thread1("A"+i);
             m1.start();
         }
     }
-    @Test
+
+    // @Test
     public static void main(String[] arg){
             Thread1 m1=new Thread1("A");
              Thread1 m2=new Thread1("B");

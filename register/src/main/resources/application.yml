@@ -1,15 +1,58 @@
 #spring:
 #  profiles: beta #激活环境
 
+#配置端口
 server:
   port: 8082
 
+
+logging:
+  level:
+    com.theoldsweb.myweb.web.mapper: debug
+
+#注册到eureka
 eureka:
   instance:
     prefer-ip-address: true
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+
+#配置编码
 spring:
   application:
     name: register
+
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+      force: true
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.106.36.62:3306/skyDrive?serverTimezone=Asia/Shanghai&useUnicode=true&useSSL=false&autoReconnect=true&characterEncoding=UTF-8&allowMultiQueries=true&rewriteBatchedStatements=true
+    username: root
+    password: root
+  redis:
+    host: 47.106.36.62
+    port: 6379
+    password: redis
+
+#生成的xml需要在此处注册，（存在bug，实际上使用包.*.xml即可，但是出现了问题）
+mybatis:
+  mapper-locations:  classpath:sqlMap/UserMapper.xml
+  configuration:
+    mapUnderscoreToCamelCase: true
+
+
+#七牛云图像存储配置
+qiniu:
+  accessKey:  TcdYzawyHUr6B7-0J-IHaW4CHgKK_VGWR2A75CdV
+  secretKey: ot9p_yHwX7NADp-OZQ5Ekw1qttq6oXp8oETp5u0Y
+  bucket: iimage
+  path: phk8c13oo.bkt.clouddn.com
+  #短信配置
+DX:
+  accessKeyId: LTAIzLYbEWAj5jcZ
+  accessKeySecret: cF1HRFRjlxljjcf6ypkHmk4RTn6Gqf
+

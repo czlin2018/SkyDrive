@@ -1,7 +1,5 @@
 package com.consumer.common;
 
-import org.junit.Test;
-
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -28,7 +26,7 @@ public class Thread3 extends Thread implements Runnable{
         }
     }
 
-    @Test
+    // @Test
     public static void main(String[] arg){
         ThreadPoolExecutor executor = new ThreadPoolExecutor(5, 10, 200, TimeUnit.MILLISECONDS,
                 new ArrayBlockingQueue<Runnable>(5));

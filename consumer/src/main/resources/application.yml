@@ -16,5 +16,5 @@ eureka:
 
 logging:
   level:
-    com.consumer.controller: debug
+    com.web.controller: debug
 

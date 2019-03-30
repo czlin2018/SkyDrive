@@ -1,6 +1,6 @@
 package com.consumer.controller;
 
-import org.junit.Test;
+import com.web.controller.ConsumerController;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.concurrent.ExecutorService;
@@ -19,7 +19,7 @@ public class ConsumerControllerTest{
     @Autowired
     ConsumerController consumerController;
 
-    @Test
+    //@Test
     public  void run1() {
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
         for (int i = 0; i < 10; i++) {
@@ -41,7 +41,7 @@ public class ConsumerControllerTest{
         }
     }
 
-    @Test
+    // @Test
     public void main (){
         consumerController.hi("MY");
     }

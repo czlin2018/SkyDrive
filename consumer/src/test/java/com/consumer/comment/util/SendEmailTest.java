@@ -1,7 +1,6 @@
 package com.consumer.comment.util;
 
-import com.consumer.comment.api.SendEmail;
-import org.junit.Test;
+import com.web.comment.api.SendEmail;
 
 import java.security.GeneralSecurityException;
 
@@ -14,7 +13,7 @@ import java.security.GeneralSecurityException;
  */
 public class SendEmailTest{
 
-    @Test
+    //  @Test
     public void send (){
         try{
             SendEmail.Send("953564227@qq.com","hello");
