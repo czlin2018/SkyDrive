@@ -1,10 +1,6 @@
 package com.consumer.comment.thread;
 
-import com.consumer.comment.api.HttpGet;
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @描述: 任务线程类1
