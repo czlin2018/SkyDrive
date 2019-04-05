@@ -5,6 +5,8 @@ import lombok.Data;
 
 @Data
 public class UserDto extends User{
-
-
+    /**
+     * 邮箱验证码
+     */
+    private String verificationCode;
 }

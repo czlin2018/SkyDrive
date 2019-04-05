@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a92ef1ca-022b-4152-80f9-9a0376719291" name="Default Changelist" comment="">
+    <list default="true" id="a92ef1ca-022b-4152-80f9-9a0376719291" name="Default Changelist" comment="完成单个服务">
+      <change afterPath="$PROJECT_DIR$/register/src/main/java/com/comment/util/EncryptionUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/src/main/java/com/web/controller/ConsumerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/src/main/java/com/web/controller/ConsumerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/src/main/java/com/comment/api/DateApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/register/src/main/java/com/comment/api/DateApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/src/main/java/com/comment/api/RedisUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/register/src/main/java/com/theoldsweb/myweb/common/api/RedisUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/src/main/java/com/comment/api/SendEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/register/src/main/java/com/comment/api/SendEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/src/main/java/com/comment/url/Url.java" beforeDir="false" afterPath="$PROJECT_DIR$/register/src/main/java/com/comment/url/Url.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/src/main/java/com/web/controller/Controller01.java" beforeDir="false" afterPath="$PROJECT_DIR$/register/src/main/java/com/web/controller/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/src/main/java/com/web/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/register/src/main/java/com/web/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/src/main/java/com/web/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/register/src/main/java/com/web/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register/src/main/java/com/web/service/Service01.java" beforeDir="false" afterPath="$PROJECT_DIR$/register/src/main/java/com/web/service/RegisterService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/eureka-server/target/" />
     <ignored path="$PROJECT_DIR$/provider/target/" />
@@ -35,43 +45,44 @@
     <session id="1836019371">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.0" value="4" />
-          <entry key="project.open.time.1" value="3" />
+          <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="10" />
-          <entry key="cmd" value="2" />
+          <entry key="class" value="12" />
+          <entry key="cmd" value="3" />
           <entry key="gitignore" value="4" />
-          <entry key="iml" value="3" />
-          <entry key="java" value="153" />
-          <entry key="mvnw" value="2" />
-          <entry key="xml" value="18" />
-          <entry key="yml" value="13" />
+          <entry key="iml" value="5" />
+          <entry key="java" value="202" />
+          <entry key="mvnw" value="3" />
+          <entry key="xml" value="19" />
+          <entry key="yml" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="10" />
+          <entry key="CLASS" value="12" />
           <entry key="Git file" value="4" />
-          <entry key="IDEA_MODULE" value="3" />
-          <entry key="JAVA" value="153" />
-          <entry key="PLAIN_TEXT" value="4" />
-          <entry key="XML" value="18" />
-          <entry key="YAML" value="13" />
+          <entry key="IDEA_MODULE" value="5" />
+          <entry key="JAVA" value="202" />
+          <entry key="PLAIN_TEXT" value="6" />
+          <entry key="XML" value="19" />
+          <entry key="YAML" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="27" />
-          <entry key="java" value="2274" />
+          <entry key="dummy" value="36" />
+          <entry key="java" value="3308" />
           <entry key="txt" value="97" />
           <entry key="xml" value="96" />
           <entry key="yml" value="134" />
@@ -79,8 +90,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2274" />
-          <entry key="PLAIN_TEXT" value="124" />
+          <entry key="JAVA" value="3308" />
+          <entry key="PLAIN_TEXT" value="133" />
           <entry key="SQL" value="3" />
           <entry key="XML" value="93" />
           <entry key="YAML" value="134" />
@@ -90,106 +101,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/api/HttpGetTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/util/SendEmailTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/controller/ConsumerControllerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
-              <folding>
-                <element signature="e#1122#1123#0" expanded="true" />
-                <element signature="e#1165#1166#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/thread/LocalThreadApITest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#456#457#0" expanded="true" />
-                <element signature="e#502#503#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/web/ConsumerApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/web/controller/ConsumerController.java">
+        <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/service/RegisterService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="34" selection-start-line="34" selection-end-line="35" />
+            <state relative-caret-position="272">
+              <caret line="16" column="44" lean-forward="true" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/api/SendEmail.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="687">
+              <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/controller/RegisterController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="670">
+              <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1271#1272#0" expanded="true" />
+                <element signature="e#1337#1338#0" expanded="true" />
+                <element signature="e#1534#1535#0" expanded="true" />
+                <element signature="e#1588#1589#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/service/Service01.java">
+        <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/dto/UserDto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#398#399#0" expanded="true" />
-                <element signature="e#440#441#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/consumer/src/main/resources/application.yml">
+        <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/url/Url.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/web/comment/thread/LocalThreadApi.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="459">
+              <caret line="27" column="38" lean-forward="true" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -199,8 +157,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -214,6 +172,7 @@
       <find>82</find>
       <find>System</find>
       <find>SendEmailTest</find>
+      <find>redis</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -222,15 +181,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/provider/src/main/java/com/comment/util/thread/LocalThreadApI.java" />
-        <option value="$PROJECT_DIR$/provider/src/main/java/com/comment/util/thread/ThreadFactory.java" />
-        <option value="$PROJECT_DIR$/consumer/pom.xml" />
-        <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/thread/ThreadFactory.java" />
-        <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/thread/LocalThreadApI.java" />
-        <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/api/sendGet.java" />
-        <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/api/a.java" />
-        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/thread/LocalThreadApITest1.java" />
-        <option value="$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/thread/Thread2.java" />
         <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/api/HttpGet.java" />
         <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/thread/LocalThreadApi.java" />
         <option value="$PROJECT_DIR$/consumer/src/main/java/com/consumer/comment/thread/LocalThreadPollApI.java" />
@@ -253,11 +203,8 @@
         <option value="$PROJECT_DIR$/register/src/main/java/com/comment/api/BeanCopyUtil.java" />
         <option value="$PROJECT_DIR$/register/src/main/java/com/comment/util/PageDto.java" />
         <option value="$PROJECT_DIR$/register/src/main/java/com/comment/util/ResultDto.java" />
-        <option value="$PROJECT_DIR$/register/src/main/java/com/comment/url/Url.java" />
         <option value="$PROJECT_DIR$/register/src/main/java/com/web/entity/user.java" />
         <option value="$PROJECT_DIR$/register/.gitignore" />
-        <option value="$PROJECT_DIR$/register/src/main/java/com/web/dto/UserDto.java" />
-        <option value="$PROJECT_DIR$/register/src/main/java/com/web/entity/User.java" />
         <option value="$PROJECT_DIR$/register/src/main/java/com/web/service/Service01.java" />
         <option value="$PROJECT_DIR$/register/src/main/java/com/web/mapper/UserMapper.java" />
         <option value="$PROJECT_DIR$/register/src/main/resources/sqlMap/UserMapper.xml" />
@@ -273,6 +220,18 @@
         <option value="$PROJECT_DIR$/consumer/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/register/src/main/java/com/web/controller/Controller01.java" />
         <option value="$PROJECT_DIR$/consumer/src/main/java/com/web/controller/ConsumerController.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/comment/util/EncryptionUtil.java" />
+        <option value="$PROJECT_DIR$/register/src/test/java/com/comment/api/SendEmailTest.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/web/dto/UserDto.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/comment/api/DateApi.java" />
+        <option value="$PROJECT_DIR$/register/src/test/java/com/web/service/RegisterServiceTest.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/comment/api/RedisUtil.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/theoldsweb/myweb/common/api/RedisUtil.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/web/entity/User.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/comment/api/SendEmail.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/comment/url/Url.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/web/controller/RegisterController.java" />
+        <option value="$PROJECT_DIR$/register/src/main/java/com/web/service/RegisterService.java" />
       </list>
     </option>
   </component>
@@ -314,21 +273,251 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="203" />
+    <option name="x" value="368" />
     <option name="y" value="151" />
-    <option name="width" value="1348" />
-    <option name="height" value="719" />
+    <option name="width" value="1338" />
+    <option name="height" value="664" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <autoscrollFromSource ProjectPane="true" />
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
+      <autoscrollFromSource Scope="true" ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Production'; set:Production; class com.intellij.psi.search.scope.ProjectProductionScope">
+          <expand>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src/main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src/main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src/main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src/main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="comment" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src/main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="comment" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src/main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="comment" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="util" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src/main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="web" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src/main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="web" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="service" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src/main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="comment" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="comment" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="comment" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="url" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="comment" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="util" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="theoldsweb.myweb.common.api" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="web" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="web" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="controller" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="web" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="dto" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="web" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="entity" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="web" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="service" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="test/java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="skyDrive" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="register" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="test/java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -383,75 +572,12 @@
             </path>
             <path>
               <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
-              <item name="consumer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
               <item name="register" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="skyDrive" type="b2602c69:ProjectViewProjectNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -463,11 +589,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553938367227" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554453355958" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="ignore_missing_gitignore" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/register/src/main/java/com" />
     <property name="last_opened_file_path" value="$USER_HOME$/桌面/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -480,21 +607,25 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.web.service" />
+      <recent name="com.comment.api" />
       <recent name="com.consumer.comment.thread" />
       <recent name="com.consumer.comment.api" />
       <recent name="com.comment.util.thread" />
-      <recent name="com.consumer.comment.email" />
-      <recent name="com.consumer.controller" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/register/src/main/resources/config" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.provider" />
       <recent name="com" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/register/src/main/java/com/comment/util" />
+      <recent name="$PROJECT_DIR$/register/src/main/java/com/comment/api" />
+      <recent name="$PROJECT_DIR$/register/src/main/resources" />
+      <recent name="$PROJECT_DIR$/register" />
+      <recent name="$PROJECT_DIR$/provider/src/main/java/com/comment/util" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.web.dto" />
@@ -503,12 +634,8 @@
       <recent name="com.provider.util" />
       <recent name="com.consumer.common" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/register/src/main/java/com/comment/util" />
-      <recent name="$PROJECT_DIR$/register/src/main/java/com/comment/api" />
-      <recent name="$PROJECT_DIR$/register/src/main/resources" />
-      <recent name="$PROJECT_DIR$/register" />
-      <recent name="$PROJECT_DIR$/provider/src/main/java/com/comment/util" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/register/src/main/resources/config" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -540,22 +667,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LocalThreadApITest.run1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="consumer" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.consumer.comment.thread.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.consumer.comment.thread" />
-      <option name="MAIN_CLASS_NAME" value="com.consumer.comment.thread.LocalThreadApITest" />
-      <option name="METHOD_NAME" value="run1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="LocalThreadApITest.run2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="consumer" />
       <extension name="coverage">
@@ -572,9 +683,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RegisterServiceTest.getVerificationCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="register" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.web.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.web.service" />
+      <option name="MAIN_CLASS_NAME" value="com.web.service.RegisterServiceTest" />
+      <option name="METHOD_NAME" value="getVerificationCode" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SendEmailTest.send" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="register" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.comment.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.comment.api" />
+      <option name="MAIN_CLASS_NAME" value="com.comment.api.SendEmailTest" />
+      <option name="METHOD_NAME" value="send" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Consumer" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="consumer" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.consumer.ConsumerApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.web.ConsumerApplication" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -618,19 +761,20 @@
     </configuration>
     <list>
       <item itemvalue="Spring Boot.EurekaServer" />
-      <item itemvalue="JUnit.LocalThreadApITest.run1" />
+      <item itemvalue="Spring Boot.Consumer" />
       <item itemvalue="JUnit.HttpGetTest.sendGet" />
       <item itemvalue="JUnit.LocalThreadApITest.run2" />
-      <item itemvalue="Spring Boot.Consumer" />
       <item itemvalue="Spring Boot.Register" />
+      <item itemvalue="JUnit.SendEmailTest.send" />
+      <item itemvalue="JUnit.RegisterServiceTest.getVerificationCode" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.Register" />
+        <item itemvalue="JUnit.RegisterServiceTest.getVerificationCode" />
+        <item itemvalue="JUnit.SendEmailTest.send" />
         <item itemvalue="Spring Boot.Consumer" />
         <item itemvalue="JUnit.HttpGetTest.sendGet" />
-        <item itemvalue="JUnit.LocalThreadApITest.run1" />
-        <item itemvalue="JUnit.LocalThreadApITest.run2" />
       </list>
     </recent_temporary>
   </component>
@@ -655,7 +799,9 @@
       <workItem from="1551410590005" duration="19252000" />
       <workItem from="1551672008820" duration="3000" />
       <workItem from="1551672108844" duration="3000" />
-      <workItem from="1553913545264" duration="15571000" />
+      <workItem from="1553913545264" duration="15973000" />
+      <workItem from="1554082365975" duration="216000" />
+      <workItem from="1554429552471" duration="15718000" />
     </task>
     <task id="LOCAL-00001" summary="springcloud初始代码">
       <created>1551267443757</created>
@@ -692,48 +838,56 @@
       <option name="project" value="LOCAL" />
       <updated>1553938335340</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="完成单个服务">
+      <created>1553938411716</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1553938411716</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LocalThreadApITest_run1 - 2019.03.01 at 17h 37m 30s.xml">
-      <configuration name="LocalThreadApITest.run1" configurationId="JUnit" />
+    <history-entry file="RegisterServiceTest_getVerificationCode - 2019.04.05 at 12h 21m 43s.xml">
+      <configuration name="RegisterServiceTest.getVerificationCode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HttpGetTest_sendGet - 2019.03.01 at 17h 39m 05s.xml">
-      <configuration name="HttpGetTest.sendGet" configurationId="JUnit" />
+    <history-entry file="RegisterServiceTest_getVerificationCode - 2019.04.05 at 12h 22m 41s.xml">
+      <configuration name="RegisterServiceTest.getVerificationCode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LocalThreadApITest_run2 - 2019.03.01 at 18h 04m 50s.xml">
-      <configuration name="LocalThreadApITest.run2" configurationId="JUnit" />
+    <history-entry file="RegisterServiceTest_getVerificationCode - 2019.04.05 at 12h 22m 49s.xml">
+      <configuration name="RegisterServiceTest.getVerificationCode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LocalThreadApITest_run2 - 2019.03.01 at 18h 04m 57s.xml">
-      <configuration name="LocalThreadApITest.run2" configurationId="JUnit" />
+    <history-entry file="RegisterServiceTest_getVerificationCode - 2019.04.05 at 14h 05m 00s.xml">
+      <configuration name="RegisterServiceTest.getVerificationCode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LocalThreadApITest_run2 - 2019.03.01 at 18h 05m 01s.xml">
-      <configuration name="LocalThreadApITest.run2" configurationId="JUnit" />
+    <history-entry file="RegisterServiceTest_getVerificationCode - 2019.04.05 at 14h 06m 17s.xml">
+      <configuration name="RegisterServiceTest.getVerificationCode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LocalThreadApITest_run2 - 2019.03.01 at 18h 08m 22s.xml">
-      <configuration name="LocalThreadApITest.run2" configurationId="JUnit" />
+    <history-entry file="RegisterServiceTest_getVerificationCode - 2019.04.05 at 14h 06m 45s.xml">
+      <configuration name="RegisterServiceTest.getVerificationCode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LocalThreadApITest_run2 - 2019.03.01 at 18h 08m 29s.xml">
-      <configuration name="LocalThreadApITest.run2" configurationId="JUnit" />
+    <history-entry file="RegisterServiceTest_getVerificationCode - 2019.04.05 at 14h 07m 02s.xml">
+      <configuration name="RegisterServiceTest.getVerificationCode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LocalThreadApITest_run1 - 2019.03.01 at 18h 08m 32s.xml">
-      <configuration name="LocalThreadApITest.run1" configurationId="JUnit" />
+    <history-entry file="RegisterServiceTest_getVerificationCode - 2019.04.05 at 14h 10m 09s.xml">
+      <configuration name="RegisterServiceTest.getVerificationCode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LocalThreadApITest_run1 - 2019.03.01 at 18h 09m 13s.xml">
-      <configuration name="LocalThreadApITest.run1" configurationId="JUnit" />
+    <history-entry file="RegisterServiceTest_getVerificationCode - 2019.04.05 at 14h 13m 57s.xml">
+      <configuration name="RegisterServiceTest.getVerificationCode" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HttpGetTest_sendGet - 2019.03.01 at 18h 13m 17s.xml">
-      <configuration name="HttpGetTest.sendGet" configurationId="JUnit" />
+    <history-entry file="RegisterServiceTest_getVerificationCode - 2019.04.05 at 14h 14m 12s.xml">
+      <configuration name="RegisterServiceTest.getVerificationCode" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63021000" />
+    <option name="totallyTimeSpent" value="79357000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="21" width="1920" height="1015" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.60745615" visible="true" weight="0.23297872" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.60745615" visible="true" weight="0.23882979" />
       <window_info id="Structure" order="1" sideWeight="0.4517007" side_tool="true" weight="0.17595147" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" sideWeight="0.50239235" side_tool="true" weight="0.29233316" />
@@ -744,8 +898,8 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Problems" order="0" weight="0.32963374" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49936467" weight="0.34295228" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49202126" weight="0.47502774" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49893618" weight="0.37957823" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49202126" weight="0.5283019" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49893618" weight="0.4628191" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32963374" />
@@ -759,7 +913,7 @@
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.48097077" weight="0.18978912" />
       <window_info anchor="bottom" id="MyBatis Sql Log" order="16" />
-      <window_info active="true" anchor="bottom" id="JRebel Executor" order="17" visible="true" weight="0.4628191" />
+      <window_info active="true" anchor="bottom" id="JRebel Executor" order="17" visible="true" weight="0.2663707" />
       <window_info anchor="bottom" id="JRebel Console" order="18" sideWeight="0.5010638" side_tool="true" weight="0.36958936" />
       <window_info anchor="bottom" id="Messages" order="19" sideWeight="0.49787235" weight="0.23862375" />
       <window_info anchor="bottom" id="Debug with VisualVM" order="20" />
@@ -803,61 +957,10 @@
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/register/src/main/java/com/web/service/Service01.java</url>
-          <line>25</line>
-          <properties />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/register/src/main/java/com/web/service/Service01.java</url>
-          <line>21</line>
-          <properties />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/comment/util/thread/LocalThreadApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/comment/util/thread/ThreadFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/comment/util/thread/LocalThreadPollApI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/provider/src/main/java/com/comment/util/thread/ThreadTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/provider/src/test/java/com/comment/util/thread/LocalThreadApITest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
-          <folding>
-            <element signature="e#196#197#0" expanded="true" />
-            <element signature="e#265#266#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eureka-server/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -893,21 +996,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/register/mvnw">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register/mvnw.cmd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-714" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1751">
-          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/register/src/main/resources/config/MybatisGeneratorConfig.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -922,43 +1010,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/api/SendEmail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/api/RedisUtil.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/api/DateApi.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/api/SmsUtils.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/api/QiniuUtil.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/api/BeanCopyUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/util/PageDto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/util/SysExcCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -969,58 +1024,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/dto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/url/Url.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register/register.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/dto.java" />
     <entry file="file://$PROJECT_DIR$/register/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/RegisterApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/dto/UserDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/mapper/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1031,20 +1039,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/register/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/web/comment/api/HttpGet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
           <caret line="63" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1087,10 +1085,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
           <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
-          <folding>
-            <element signature="e#1122#1123#0" expanded="true" />
-            <element signature="e#1165#1166#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1098,11 +1092,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#456#457#0" expanded="true" />
-            <element signature="e#502#503#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1110,9 +1099,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1123,17 +1109,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/ConsumerApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/ConsumerApplicationTests.java" />
     <entry file="file://$PROJECT_DIR$/consumer/src/test/java/com/consumer/comment/api/HttpGetTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/mvnw.cmd">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/register.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/mvnw">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/web/controller/ConsumerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="30" column="31" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1142,8 +1138,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/web/ConsumerApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="102">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1154,36 +1150,165 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/service/Service01.java">
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/RegisterApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        <state relative-caret-position="102">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/mapper/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#398#399#0" expanded="true" />
-            <element signature="e#440#441#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/controller/Controller01.java">
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/util/SysExcCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+        <state relative-caret-position="102">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///opt/apache-maven-3.5.4/download/tk/mybatis/mapper/3.5.0/mapper-3.5.0.jar!/tk/mybatis/mapper/common/base/insert/InsertMapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/api/SmsUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/api/QiniuUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/test/java/com/comment/api/SendEmailTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///opt/apache-maven-3.5.4/download/org/springframework/data/spring-data-redis/2.1.5.RELEASE/spring-data-redis-2.1.5.RELEASE.jar!/org/springframework/data/redis/core/RedisTemplate.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="70" column="103" selection-start-line="70" selection-start-column="98" selection-end-line="70" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/util/EncryptionUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="27" />
           <folding>
-            <element signature="e#693#694#0" expanded="true" />
-            <element signature="e#734#735#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/consumer/src/main/java/com/web/controller/ConsumerController.java">
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/api/BeanCopyUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="34" selection-start-line="34" selection-end-line="35" />
+        <state relative-caret-position="425">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/test/java/com/web/service/RegisterServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="36" column="22" lean-forward="true" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/api/DateApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="41" column="38" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/theoldsweb/myweb/common/api/RedisUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/api/SendEmail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="687">
+          <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/comment/url/Url.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="38" lean-forward="true" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="1" lean-forward="true" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/dto/UserDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/controller/RegisterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
+          <folding>
+            <element signature="e#1271#1272#0" expanded="true" />
+            <element signature="e#1337#1338#0" expanded="true" />
+            <element signature="e#1534#1535#0" expanded="true" />
+            <element signature="e#1588#1589#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register/src/main/java/com/web/service/RegisterService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="44" lean-forward="true" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
         </state>
       </provider>
     </entry>

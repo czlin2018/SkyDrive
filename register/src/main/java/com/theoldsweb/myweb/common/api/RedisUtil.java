@@ -1,4 +1,4 @@
-package com.comment.api;
+package com.theoldsweb.myweb.common.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -17,6 +17,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class RedisUtil{
+
     @Autowired
     private RedisTemplate< Object, Object > redisTemplate;
 
@@ -29,9 +30,8 @@ public class RedisUtil{
         redisTemplate.setKeySerializer(redisSerializer);
         redisTemplate.opsForValue().set(key, object);
     }
-
     /**
-     * 查询redis
+     *查询redis
      */
     public Object find (String key){
         RedisSerializer redisSerializer = new StringRedisSerializer();
@@ -39,7 +39,6 @@ public class RedisUtil{
         Object o = redisTemplate.opsForValue().get(key);
         return o;
     }
-
     /**
      * 刷新
      */

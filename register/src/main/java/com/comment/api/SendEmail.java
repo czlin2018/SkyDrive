@@ -8,21 +8,17 @@ package com.comment.api;
  * @创建时间: 下午5:00
  */
 
-import java.security.GeneralSecurityException;
-import java.util.Properties;
-import javax.mail.Authenticator;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
+import com.sun.mail.util.MailSSLSocketFactory;
+
+import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import com.sun.mail.util.MailSSLSocketFactory;
+import java.security.GeneralSecurityException;
+import java.util.Properties;
 
 public class SendEmail
 {
-    public static void Send(String to,String text) throws GeneralSecurityException
+    public static String send (String to, String text) throws GeneralSecurityException
     {
         // 收件人电子邮箱
         //to = "953564227@qq.com";
@@ -66,16 +62,17 @@ public class SendEmail
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 
             // Set Subject: 头部头字段
-            message.setSubject("这是JAVA代码邮箱给你们发送的数据!");
+            message.setSubject("陈泽林的毕业设计网盘注册验证码");
 
             // 设置消息体
-            message.setText(text);
+            message.setText("验证码:" + text);
 
             // 发送消息
             Transport.send(message);
-            System.out.println("Sent message successfully....from qq.com");
+
         }catch (MessagingException mex) {
             mex.printStackTrace();
         }
+        return text;
     }
 }

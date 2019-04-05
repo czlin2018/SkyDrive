@@ -20,6 +20,9 @@ public class DateApi{
     static Logger log = LoggerFactory.getLogger(DateApi.class);
 
 
+    /**
+     * 用来当成随机码
+     */
     public static String getTimeId (){
         long timesId = System.currentTimeMillis();
         String str = String.valueOf(timesId);

@@ -25,11 +25,6 @@ public class User implements Serializable {
      */
     private String password;
 
-    /**
-     * 创建时间
-     */
-    @Column(name = "create_time")
-    private Date createTime;
 
     /**
      * 更新时间
