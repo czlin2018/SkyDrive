@@ -2,11 +2,11 @@ package com.web.service;
 
 import com.comment.api.BeanCopyUtil;
 import com.comment.api.DateApi;
+import com.comment.api.RedisUtil;
 import com.comment.api.SendEmail;
 import com.comment.util.EncryptionUtil;
 import com.comment.util.ResultDto;
 import com.comment.util.SysExcCode;
-import com.theoldsweb.myweb.common.api.RedisUtil;
 import com.web.dto.UserDto;
 import com.web.entity.User;
 import com.web.mapper.UserMapper;
@@ -95,20 +95,26 @@ public class RegisterService{
      */
     public ResultDto joinIn (UserDto userDto){
 
+        String userName = null;
         //用户名登录
         User user = new User();
         user.setPassword(EncryptionUtil.getMD5(userDto.getPassword()));
         user.setName(userDto.getName());
         User selectUser1 = userMapper.selectOne(user);
-
+        if ( null != selectUser1 ) {
+            userName = selectUser1.getName( );
+        }
         //账号登录
         user = new User();
         user.setPassword(EncryptionUtil.getMD5(userDto.getPassword()));
         user.setUserId(userDto.getName());
         User selectUser2 = userMapper.selectOne(user);
+        if ( null != selectUser2 ) {
+            userName = selectUser2.getName( );
+        }
         if(null == selectUser2 && null == selectUser1){
             return new ResultDto(SysExcCode.SysCommonExcCode.SYS_ERROR, "用户名或者密码不正确");
         }
-        return new ResultDto(SysExcCode.SysCommonExcCode.SYS_SUCCESS, "登录成功");
+        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "登录成功" , userName );
     }
 }

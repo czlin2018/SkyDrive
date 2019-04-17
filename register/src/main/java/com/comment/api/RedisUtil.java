@@ -1,4 +1,4 @@
-package com.theoldsweb.myweb.common.api;
+package com.comment.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;

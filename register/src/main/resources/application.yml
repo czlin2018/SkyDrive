@@ -3,12 +3,12 @@
 
 #配置端口
 server:
-  port: 8082
+  port: 9100
 
 
 logging:
   level:
-    com.theoldsweb.myweb.web.mapper: debug
+    com.web.mapper: debug
 
 #注册到eureka
 eureka:
