@@ -6,10 +6,10 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
-import java.util.Date;
+
 @Data
-@Table(name = "user")
-public class User implements Serializable {
+@Table(name = "userType")
+public class UserType implements Serializable {
 
     @Id
     @Column(name = "id")
@@ -18,7 +18,8 @@ public class User implements Serializable {
     /**
      * 姓名
      */
-    private String name;
+    @Column(name = "user_type")
+    private String userType;
 
     /**
      * 账户
@@ -26,16 +27,5 @@ public class User implements Serializable {
     @Column(name = "user_id")
     private String userId;
 
-    /**
-     * 密码
-     */
-    private String password;
-
-
-    /**
-     * 更新时间
-     */
-    @Column(name = "update_time")
-    private Date updateTime;
 
 }

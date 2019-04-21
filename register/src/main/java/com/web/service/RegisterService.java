@@ -5,16 +5,23 @@ import com.comment.api.DateApi;
 import com.comment.api.RedisUtil;
 import com.comment.api.SendEmail;
 import com.comment.util.EncryptionUtil;
+import com.comment.util.PageDto;
 import com.comment.util.ResultDto;
 import com.comment.util.SysExcCode;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.web.dto.UserDto;
 import com.web.entity.User;
+import com.web.entity.UserType;
 import com.web.mapper.UserMapper;
+import com.web.mapper.UserTypeMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.security.GeneralSecurityException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @描述:
@@ -28,6 +35,9 @@ public class RegisterService{
 
     @Autowired
     UserMapper userMapper;
+
+    @Autowired
+    UserTypeMapper userTypeMapper;
 
     @Autowired
     RedisUtil redisUtil;
@@ -59,7 +69,14 @@ public class RegisterService{
         user.setPassword(md5);
         user.setUpdateTime(DateApi.currentDateTime());
         int insert = userMapper.insert(user);
-        if(insert < 1){
+
+        //设置用户角色
+        UserType userType = new UserType( );
+        userType.setUserId( user.getUserId( ) );
+        userType.setUserType( userDto.getUserType( ) );
+        int insert1 = userTypeMapper.insert( userType );
+
+        if ( insert < 1 || insert1 < 1 ) {
             return new ResultDto(SysExcCode.SysCommonExcCode.SYS_ERROR, "注册失败");
         }
         return new ResultDto(SysExcCode.SysCommonExcCode.SYS_SUCCESS, "注册成功");
@@ -100,21 +117,61 @@ public class RegisterService{
         User user = new User();
         user.setPassword(EncryptionUtil.getMD5(userDto.getPassword()));
         user.setName(userDto.getName());
-        User selectUser1 = userMapper.selectOne(user);
-        if ( null != selectUser1 ) {
-            userName = selectUser1.getName( );
-        }
-        //账号登录
-        user = new User();
-        user.setPassword(EncryptionUtil.getMD5(userDto.getPassword()));
-        user.setUserId(userDto.getName());
-        User selectUser2 = userMapper.selectOne(user);
-        if ( null != selectUser2 ) {
-            userName = selectUser2.getName( );
-        }
-        if(null == selectUser2 && null == selectUser1){
+        user.setUserId( userDto.getName( ) );
+        UserDto selectUser = userMapper.joinIn( user );
+        if ( null == selectUser ) {
             return new ResultDto(SysExcCode.SysCommonExcCode.SYS_ERROR, "用户名或者密码不正确");
         }
-        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "登录成功" , userName );
+        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "登录成功" , selectUser );
+    }
+
+
+    /**
+     * 获取全部用户
+     * 用户名，账户
+     *
+     * @param name
+     * @return
+     */
+    public ResultDto getList( String name , PageDto pageDto ){
+        Page <Object> objectPage = PageHelper.startPage( pageDto.getPageNo( ) , pageDto.getPageSize( ) );
+        List <UserDto> userDtoList = userMapper.getList( name );
+        pageDto.setTotalCount( objectPage.getTotal( ) );
+        pageDto.setPageData( userDtoList );
+        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , pageDto );
+
+    }
+
+    /**
+     * 删除
+     *
+     * @param ids
+     * @return
+     */
+
+    public ResultDto delete( String ids ){
+        String[] split = ids.split( "," );
+        List <String> id = new ArrayList <>( );
+        for ( String s : split ) {
+            id.add( s );
+        }
+
+        Integer d = userMapper.deleteByIds( id );
+        if ( d <= 0 ) {
+            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "删除失败" );
+        }
+        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "成功删除" + d + "条" );
+    }
+
+
+    public ResultDto update( UserDto userDto ){
+        User user = new User( );
+        BeanCopyUtil.copy( userDto , user );
+        int i = userMapper.updateByPrimaryKeySelective( user );
+        if ( i <= 0 ) {
+            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "修改失败" );
+        }
+        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "修改成功" );
+
     }
 }

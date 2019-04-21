@@ -1,6 +1,7 @@
 package com.web.controller;
 
 import com.comment.url.Url;
+import com.comment.util.PageDto;
 import com.comment.util.ResultDto;
 import com.web.dto.UserDto;
 import com.web.service.RegisterService;
@@ -65,6 +66,42 @@ public class RegisterController{
     public ResultDto joinIn (@RequestBody UserDto userDto){
         return registerService.joinIn(userDto);
     }
+
+    /**
+     * 获取全部用户
+     * 用户名，账户
+     *
+     * @param name
+     * @return
+     */
+    @GetMapping(value = Url.REGISTER.GETLIST)
+    public ResultDto getList( String name , PageDto pageDto ){
+        return registerService.getList( name , pageDto );
+    }
+
+    /**
+     * 获取全部用户
+     * 用户名，账户
+     *
+     * @param ids
+     * @return
+     */
+    @GetMapping(value = Url.REGISTER.DELETE)
+    public ResultDto delete( String ids ){
+        return registerService.delete( ids );
+    }
+
+    /**
+     * 注册用户
+     *
+     * @param userDto 用户类
+     * @return
+     */
+    @PostMapping(value = Url.REGISTER.UPDATE)
+    public ResultDto update( @RequestBody UserDto userDto ){
+        return registerService.update( userDto );
+    }
+
 
 
 }

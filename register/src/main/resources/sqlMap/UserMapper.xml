@@ -9,13 +9,62 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="user_id" jdbcType="VARCHAR" property="userId" />
     <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
+  <delete id="deleteByIds">
+    DELETE
+    FROM
+    `user`
+    WHERE
+    id in
+    <foreach collection="id" index="index" item="item" open="(" separator="," close=")">
+      #{item}
+    </foreach>
+  </delete>
+
   <select id="selectPassage" resultType="java.lang.String">
     select password
     from user
     where name=#{name}
+  </select>
+  <select id="getList" resultType="com.web.dto.UserDto">
+    select
+    id ,
+    name ,
+    user_id as userId ,
+    update_time
+    from user
+    <where>
+      <if test="name!=null and name!=''">
+        name=#{name}
+        or user_id=#{name}
+      </if>
+    </where>
+  </select>
+  <select id="joinIn" resultType="com.web.dto.UserDto">
+    select
+    u.id ,
+    u.name ,
+    u.user_id as userId ,
+    u.update_time,
+	ut.user_type as userType
+    from user u
+		LEFT JOIN userType ut
+		on u.user_id=ut.user_id
+		WHERE
+		name =#{user.name} and u.password =#{user.password}
+	union
+	select
+    u.id ,
+    u.name ,
+    u.user_id as userId ,
+    u.update_time,
+	ut.user_type
+    from user u
+		LEFT JOIN userType ut
+		on u.user_id=ut.user_id
+		WHERE
+		u.user_id =#{user.userId} and u.password =#{user.password}
   </select>
 
 </mapper>

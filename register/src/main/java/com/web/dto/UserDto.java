@@ -9,4 +9,11 @@ public class UserDto extends User{
      * 邮箱验证码
      */
     private String verificationCode;
+
+    /**
+     * 身份
+     */
+    private String userType;
+
+
 }
