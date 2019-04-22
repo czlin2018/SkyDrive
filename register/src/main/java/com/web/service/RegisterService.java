@@ -55,6 +55,13 @@ public class RegisterService{
      */
     @Transactional(rollbackFor = Exception.class)
     public ResultDto insert (UserDto userDto){
+        if ( checkExistName( userDto ) ) {
+            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "用户名已经存在!" );
+        }
+        if ( checkExisUserId( userDto ) ) {
+            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "账户名已经存在!" );
+        }
+
         User user = new User();
         BeanCopyUtil.copy(userDto, user);
 
@@ -80,6 +87,83 @@ public class RegisterService{
             return new ResultDto(SysExcCode.SysCommonExcCode.SYS_ERROR, "注册失败");
         }
         return new ResultDto(SysExcCode.SysCommonExcCode.SYS_SUCCESS, "注册成功");
+    }
+
+    /**
+     * 更新
+     *
+     * @param userDto
+     * @return
+     */
+    public ResultDto update( UserDto userDto ){
+        if ( checkExistName( userDto ) ) {
+            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "用户名已经存在!" );
+        }
+        if ( checkExisUserId( userDto ) ) {
+            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "账户名已经存在!" );
+        }
+        User user = new User( );
+        BeanCopyUtil.copy( userDto , user );
+        int i = userMapper.updateByPrimaryKeySelective( user );
+        if ( i <= 0 ) {
+            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "修改失败" );
+        }
+        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "修改成功" );
+
+    }
+
+    /**
+     * 判断是否用户名存在
+     *
+     * @param userDto
+     * @return
+     */
+    boolean checkExistName( UserDto userDto ){
+        if ( null == userDto.getName( ) ) {
+            return false;
+        }
+        User user = new User( );
+        user.setName( userDto.getName( ) );
+        User selectOne = userMapper.selectOne( user );
+        if ( null == selectOne ) {
+            return false;
+        }
+        //说明是新增
+        if ( null == userDto.getId( ) ) {
+            return true;
+        }
+        //说明是更新为自己
+        if ( userDto.getId( ).equals( selectOne.getId( ) ) ) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * 判断是否账户存在
+     *
+     * @param userDto
+     * @return
+     */
+    boolean checkExisUserId( UserDto userDto ){
+        if ( null == userDto.getUserId( ) ) {
+            return false;
+        }
+        User user = new User( );
+        user.setUserId( userDto.getUserId( ) );
+        User selectOne = userMapper.selectOne( user );
+        if ( null == selectOne ) {
+            return false;
+        }
+        //说明是新增
+        if ( null == userDto.getId( ) ) {
+            return true;
+        }
+        //说明是更新为自己
+        if ( userDto.getId( ).equals( selectOne.getId( ) ) ) {
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -164,14 +248,4 @@ public class RegisterService{
     }
 
 
-    public ResultDto update( UserDto userDto ){
-        User user = new User( );
-        BeanCopyUtil.copy( userDto , user );
-        int i = userMapper.updateByPrimaryKeySelective( user );
-        if ( i <= 0 ) {
-            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "修改失败" );
-        }
-        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "修改成功" );
-
-    }
 }
