@@ -3,6 +3,21 @@
 spring:
   application:
     name: consumer-01
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+      force: true
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.106.36.62:3306/skyDrive?serverTimezone=Asia/Shanghai&useUnicode=true&useSSL=false&autoReconnect=true&characterEncoding=UTF-8&allowMultiQueries=true&rewriteBatchedStatements=true
+    username: root
+    password: root
+  redis:
+    host: 47.106.36.62
+    port: 6379
+    password: redis
+
 
 server:
   port: 9200

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
@@ -70,6 +70,11 @@
             <artifactId>hadoop-hdfs</artifactId>
             <version>3.2.0</version>
         </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>6.0.6</version>
+        </dependency>
         <!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash; https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-core &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
         <!--<dependency>-->
         <!--<groupId>org.apache.hadoop</groupId>-->
@@ -83,7 +88,12 @@
             <artifactId>hadoop-client</artifactId>
             <version>3.2.0</version>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper mybaits 分页插件-->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.2.10</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>

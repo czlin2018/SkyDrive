@@ -1,11 +1,11 @@
 package com.web.controller;
 
+import com.web.comment.unit.PageDto;
 import com.web.comment.unit.ResultDto;
+import com.web.dto.HadoopDto;
 import com.web.service.HadoopService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
@@ -22,20 +22,20 @@ public class HadoopController {
     /**
      * 创建文件夹
      *
-     * @param path
+     * @param hadoopDto
      * @return
      * @throws Exception
      */
     @PostMapping("/mkdir")
-    public ResultDto mkdir( @RequestParam("path") String path ) throws Exception{
-        return hadoopService.mkdir( path );
+    public ResultDto mkdir( @RequestBody HadoopDto hadoopDto ) throws Exception{
+        return hadoopService.mkdir( hadoopDto.getPath( ) , hadoopDto.getUserId( ) );
     }
 
 
     /**
      * 创建文件
-     *
      * @param path
+     * @param file
      * @return
      * @throws Exception
      */
@@ -44,7 +44,6 @@ public class HadoopController {
         return hadoopService.createFile( path , file );
     }
 
-
     /**
      * 读取HDFS文件内容
      *
@@ -52,8 +51,8 @@ public class HadoopController {
      * @return
      * @throws Exception
      */
-    @PostMapping("/readFile")
-    public ResultDto readFile( @RequestParam("path") String path ) throws Exception{
+    @GetMapping("/readFile")
+    public ResultDto readFile( String path ) throws Exception{
         return hadoopService.readFile( path );
     }
 
@@ -64,9 +63,10 @@ public class HadoopController {
      * @return
      * @throws Exception
      */
-    @PostMapping("/readPathInfo")
-    public ResultDto readPathInfo( @RequestParam("path") String path ) throws Exception{
-        return hadoopService.readPathInfo( path );
+
+    @GetMapping("/readPathInfo")
+    public ResultDto readPathInfo( String path , String userId , PageDto pageDto ) throws Exception{
+        return hadoopService.readPathInfo( path , userId , pageDto );
     }
 
     /**
@@ -76,22 +76,21 @@ public class HadoopController {
      * @return
      * @throws Exception
      */
-    @PostMapping("/listFile")
-    public ResultDto listFile( @RequestParam("path") String path ) throws Exception{
+    @GetMapping("/listFile")
+    public ResultDto listFile( String path ) throws Exception{
         return hadoopService.listFile( path );
     }
 
     /**
      * 重命名文件
      *
-     * @param oldName
-     * @param newName
+     * @param hadoopDto
      * @return
      * @throws Exception
      */
     @PostMapping("/renameFile")
-    public ResultDto renameFile( @RequestParam("oldName") String oldName , @RequestParam("newName") String newName ) throws Exception{
-        return hadoopService.renameFile( oldName , newName );
+    public ResultDto renameFile( @RequestBody HadoopDto hadoopDto ) throws Exception{
+        return hadoopService.renameFile( hadoopDto.getOldName( ) , hadoopDto.getNewName( ) );
     }
 
     /**
@@ -101,50 +100,48 @@ public class HadoopController {
      * @return
      * @throws Exception
      */
-    @PostMapping("/deleteFile")
-    public ResultDto deleteFile( @RequestParam("path") String path ) throws Exception{
+    @GetMapping("/deleteFile")
+    public ResultDto deleteFile( String path ) throws Exception{
         return hadoopService.deleteFile( path );
     }
 
 
     /**
-     * 上传文件
+     * 上传文件2
      *
-     * @param path
-     * @param uploadPath
+     * @param hadoopDto
      * @return
      * @throws Exception
      */
     @PostMapping("/uploadFile")
-    public ResultDto uploadFile( @RequestParam("path") String path , @RequestParam("uploadPath") String uploadPath ) throws Exception{
-        return hadoopService.uploadFile( path , uploadPath );
+    public ResultDto uploadFile( @RequestBody HadoopDto hadoopDto ) throws Exception{
+        return hadoopService.uploadFile( hadoopDto.getPath( ) , hadoopDto.getUploadPath( ) );
     }
 
 
     /**
      * 下载文件
      *
-     * @param path
-     * @param downloadPath
+     * @param hadoopDto
      * @return
      * @throws Exception
      */
     @PostMapping("/downloadFile")
-    public ResultDto downloadFile( @RequestParam("path") String path , @RequestParam("downloadPath") String downloadPath ) throws Exception{
-        return hadoopService.downloadFile( path , downloadPath );
+    public ResultDto downloadFile( @RequestBody HadoopDto hadoopDto ) throws Exception{
+        hadoopDto.setDownloadPath( "/home/czl/桌面/下载" );
+        return hadoopService.downloadFile( hadoopDto.getPath( ) , hadoopDto.getDownloadPath( ) );
     }
 
     /**
      * HDFS文件复制
      *
-     * @param sourcePath
-     * @param targetPath
+     * @param hadoopDto
      * @return
      * @throws Exception
      */
     @PostMapping("/copyFile")
-    public ResultDto copyFile( @RequestParam("sourcePath") String sourcePath , @RequestParam("targetPath") String targetPath ) throws Exception{
-        return hadoopService.copyFile( sourcePath , targetPath );
+    public ResultDto copyFile( @RequestBody HadoopDto hadoopDto ) throws Exception{
+        return hadoopService.copyFile( hadoopDto.getSourcePath( ) , hadoopDto.getTargetPath( ) );
     }
 
 }

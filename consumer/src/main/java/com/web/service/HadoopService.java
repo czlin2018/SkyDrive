@@ -1,6 +1,9 @@
 package com.web.service;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.web.comment.api.HadoopUtil;
+import com.web.comment.unit.PageDto;
 import com.web.comment.unit.ResultDto;
 import com.web.comment.unit.SysExcCode;
 import org.apache.hadoop.fs.*;
@@ -33,7 +36,7 @@ public class HadoopService {
      * @return
      * @throws Exception
      */
-    public ResultDto mkdir( String path ) throws Exception{
+    public ResultDto mkdir( String path , String userId ) throws Exception{
 
         if ( StringUtils.isEmpty( path ) ) {
             return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "请求参数为空!" );
@@ -46,7 +49,7 @@ public class HadoopService {
         boolean isOk = fs.mkdirs( newPath );
         fs.close( );
         if ( isOk ) {
-            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "创建成功!" );
+            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "创建成功!" , userId );
         }
         return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "创建失败!" );
 
@@ -65,6 +68,9 @@ public class HadoopService {
         if ( StringUtils.isEmpty( path ) || null == file.getBytes( ) ) {
             return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "请求参数为空!" );
         }
+        if ( "/".equals( path ) ) {
+            path = "";
+        }
         String fileName = file.getOriginalFilename( );
         FileSystem fs = HadoopUtil.getFileSystem( );
         // 上传时默认当前目录，后面自动拼接文件的目录
@@ -78,6 +84,13 @@ public class HadoopService {
 
     }
 
+    /**
+     * 读取HDFS文件内容
+     *
+     * @param path
+     * @return
+     * @throws Exception
+     */
     public ResultDto readFile( String path ) throws Exception{
         FileSystem fs = HadoopUtil.getFileSystem( );
         Path newPath = new Path( path );
@@ -93,7 +106,18 @@ public class HadoopService {
         return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "读取成功!" );
     }
 
-    public ResultDto readPathInfo( String path ) throws Exception{
+    /**
+     * 读取HDFS目录信息
+     *
+     * @param path
+     * @param pageDto
+     * @return
+     * @throws Exception
+     */
+    public ResultDto readPathInfo( String path , String userId , PageDto pageDto ) throws Exception{
+        Page <Object> objectPage = PageHelper.startPage( pageDto.getPageNo( ) , pageDto.getPageSize( ) );
+        System.out.println( pageDto.getPageNo( ).toString( ) );
+        System.out.println( pageDto.getPageSize( ).toString( ) );
         FileSystem fs = HadoopUtil.getFileSystem( );
         Path newPath = new Path( path );
         FileStatus[] statusList = fs.listStatus( newPath );
@@ -101,17 +125,31 @@ public class HadoopService {
         if ( null != statusList && statusList.length > 0 ) {
             for ( FileStatus fileStatus : statusList ) {
                 Map <String, Object> map = new HashMap <>( );
-                map.put( "filePath" , fileStatus.getPath( ) );
-                map.put( "fileStatus" , fileStatus.toString( ) );
+                boolean directory = fileStatus.isDirectory( );
+                String name = fileStatus.getPath( ).getName( );
+                map.put( "name" , name );
+                map.put( "directory" , directory );
+                map.put( "userId" , userId );
+                //map.put( "filePath" , fileStatus.getPath( ) );
+                //map.put( "fileStatus" , fileStatus.toString( ) );
                 list.add( map );
             }
-            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "读取成功!" , list );
+            pageDto.setTotalCount( (long) 10 );
+            pageDto.setPageData( list );
+            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "读取成功!" , pageDto );
         } else {
-            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "目录内容为空!" );
+            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "目录内容为空!" , pageDto );
 
         }
     }
 
+    /**
+     * 读取文件列表
+     *
+     * @param path
+     * @return
+     * @throws Exception
+     */
     public ResultDto listFile( String path ) throws Exception{
 
         if ( StringUtils.isEmpty( path ) ) {
@@ -136,6 +174,14 @@ public class HadoopService {
 
     }
 
+    /**
+     * 重命名文件
+     *
+     * @param oldName
+     * @param newName
+     * @return
+     * @throws Exception
+     */
     public ResultDto renameFile( String oldName , String newName ) throws Exception{
         if ( StringUtils.isEmpty( oldName ) || StringUtils.isEmpty( newName ) ) {
             return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "请求参数为空!" );
@@ -152,6 +198,13 @@ public class HadoopService {
         }
     }
 
+    /**
+     * 删除文件
+     *
+     * @param path
+     * @return
+     * @throws Exception
+     */
     public ResultDto deleteFile( String path ) throws Exception{
         FileSystem fs = HadoopUtil.getFileSystem( );
         Path newPath = new Path( path );
@@ -165,6 +218,14 @@ public class HadoopService {
 
     }
 
+    /**
+     * 上传文件2
+     *
+     * @param path
+     * @param uploadPath
+     * @return
+     * @throws Exception
+     */
     public ResultDto uploadFile( String path , String uploadPath ) throws Exception{
         FileSystem fs = HadoopUtil.getFileSystem( );
         // 上传路径
@@ -180,6 +241,14 @@ public class HadoopService {
 
     }
 
+    /**
+     * 下载文件
+     *
+     * @param path
+     * @param downloadPath
+     * @return
+     * @throws Exception
+     */
     public ResultDto downloadFile( String path , String downloadPath ) throws Exception{
         FileSystem fs = HadoopUtil.getFileSystem( );
         // 上传路径
@@ -190,10 +259,18 @@ public class HadoopService {
         // 调用文件系统的文件复制方法，第一个参数是否删除原文件true为删除，默认为false
         fs.copyToLocalFile( false , clientPath , serverPath );
         fs.close( );
-        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "下载成功!" );
+        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "下载成功,文件路径:" + downloadPath );
 
     }
 
+    /**
+     * HDFS文件复制
+     *
+     * @param sourcePath
+     * @param targetPath
+     * @return
+     * @throws Exception
+     */
     public ResultDto copyFile( String sourcePath , String targetPath ) throws Exception{
 
         FileSystem fs = HadoopUtil.getFileSystem( );
