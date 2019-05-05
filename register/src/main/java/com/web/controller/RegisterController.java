@@ -41,7 +41,7 @@ public class RegisterController{
      * @return
      */
     @PostMapping(value = Url.REGISTER.INSERT)
-    public ResultDto updateWorkOrderReturnDelayReason (@RequestBody UserDto userDto){
+    public ResultDto insert( @RequestBody UserDto userDto ){
         return registerService.insert(userDto);
     }
 

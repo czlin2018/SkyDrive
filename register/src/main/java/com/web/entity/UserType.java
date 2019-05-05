@@ -11,19 +11,21 @@ import java.io.Serializable;
 @Table(name = "userType")
 public class UserType implements Serializable {
 
-    @Id
+
     @Column(name = "id")
     private Integer id;
 
     /**
      * 姓名
      */
+
     @Column(name = "user_type")
     private String userType;
 
     /**
      * 账户
      */
+    @Id
     @Column(name = "user_id")
     private String userId;
 

@@ -6,17 +6,17 @@ import com.web.comment.api.HadoopUtil;
 import com.web.comment.unit.PageDto;
 import com.web.comment.unit.ResultDto;
 import com.web.comment.unit.SysExcCode;
+import com.web.entity.Resource;
+import com.web.mapper.ResourceMapper;
 import org.apache.hadoop.fs.*;
 import org.apache.hadoop.io.IOUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @描述:
@@ -29,6 +29,24 @@ import java.util.Map;
 @Service
 public class HadoopService {
 
+    @Autowired
+    ResourceMapper resourceMapper;
+
+
+    /**
+     * 简单权限
+     *
+     * @param userId
+     * @param path
+     * @return
+     */
+    public String getPath( String userId , String path ){
+        if ( StringUtils.isEmpty( userId ) )
+            return path;
+        return "/" + userId + "/" + path;
+    }
+
+
     /**
      * 创建文件夹
      *
@@ -38,9 +56,8 @@ public class HadoopService {
      */
     public ResultDto mkdir( String path , String userId ) throws Exception{
 
-        if ( StringUtils.isEmpty( path ) ) {
-            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "请求参数为空!" );
-        }
+        path = getPath( userId , path );
+
         // 文件对象
         FileSystem fs = HadoopUtil.getFileSystem( );
         // 目标路径
@@ -49,6 +66,14 @@ public class HadoopService {
         boolean isOk = fs.mkdirs( newPath );
         fs.close( );
         if ( isOk ) {
+            Resource resource = new Resource( );
+            resource.setResourceId( "1" );
+            resource.setFullPath( "1" );
+            resource.setPath( "1" );
+            resource.setResourceName( "1" );
+            resource.setUpdateTime( new Date( ) );
+            resourceMapper.insertSelective( resource );
+
             return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "创建成功!" , userId );
         }
         return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "创建失败!" );
@@ -64,10 +89,11 @@ public class HadoopService {
      * @throws Exception
      */
 
-    public ResultDto createFile( String path , MultipartFile file ) throws Exception{
+    public ResultDto createFile( String path , String userId , MultipartFile file ) throws Exception{
         if ( StringUtils.isEmpty( path ) || null == file.getBytes( ) ) {
             return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "请求参数为空!" );
         }
+        // path = getPath( userId , path );
         if ( "/".equals( path ) ) {
             path = "";
         }
@@ -83,6 +109,45 @@ public class HadoopService {
         return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "创建成功!" );
 
     }
+
+    /**
+     * 读取HDFS目录信息
+     *
+     * @param path
+     * @param pageDto
+     * @return
+     * @throws Exception
+     */
+    public ResultDto readPathInfo( String path , String userId , PageDto pageDto ) throws Exception{
+
+        path = getPath( userId , path );
+
+        Page <Object> objectPage = PageHelper.startPage( pageDto.getPageNo( ) , pageDto.getPageSize( ) );
+        FileSystem fs = HadoopUtil.getFileSystem( );
+        Path newPath = new Path( path );
+        FileStatus[] statusList = fs.listStatus( newPath );
+        List <Map <String, Object>> list = new ArrayList <>( );
+        if ( null != statusList && statusList.length > 0 ) {
+            for ( FileStatus fileStatus : statusList ) {
+                Map <String, Object> map = new HashMap <>( );
+                boolean directory = fileStatus.isDirectory( );
+                String name = fileStatus.getPath( ).getName( );
+                map.put( "name" , name );
+                map.put( "directory" , directory );
+                //map.put( "filePath" , fileStatus.getPath( ) );
+                //map.put( "fileStatus" , fileStatus.toString( ) );
+                list.add( map );
+            }
+            pageDto.setTotalCount( (long) 10 );
+            pageDto.setPageData( list );
+            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "读取成功!" , pageDto );
+        } else {
+            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "目录内容为空!" , pageDto );
+
+        }
+    }
+
+
 
     /**
      * 读取HDFS文件内容
@@ -106,42 +171,7 @@ public class HadoopService {
         return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "读取成功!" );
     }
 
-    /**
-     * 读取HDFS目录信息
-     *
-     * @param path
-     * @param pageDto
-     * @return
-     * @throws Exception
-     */
-    public ResultDto readPathInfo( String path , String userId , PageDto pageDto ) throws Exception{
-        Page <Object> objectPage = PageHelper.startPage( pageDto.getPageNo( ) , pageDto.getPageSize( ) );
-        System.out.println( pageDto.getPageNo( ).toString( ) );
-        System.out.println( pageDto.getPageSize( ).toString( ) );
-        FileSystem fs = HadoopUtil.getFileSystem( );
-        Path newPath = new Path( path );
-        FileStatus[] statusList = fs.listStatus( newPath );
-        List <Map <String, Object>> list = new ArrayList <>( );
-        if ( null != statusList && statusList.length > 0 ) {
-            for ( FileStatus fileStatus : statusList ) {
-                Map <String, Object> map = new HashMap <>( );
-                boolean directory = fileStatus.isDirectory( );
-                String name = fileStatus.getPath( ).getName( );
-                map.put( "name" , name );
-                map.put( "directory" , directory );
-                map.put( "userId" , userId );
-                //map.put( "filePath" , fileStatus.getPath( ) );
-                //map.put( "fileStatus" , fileStatus.toString( ) );
-                list.add( map );
-            }
-            pageDto.setTotalCount( (long) 10 );
-            pageDto.setPageData( list );
-            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "读取成功!" , pageDto );
-        } else {
-            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "目录内容为空!" , pageDto );
 
-        }
-    }
 
     /**
      * 读取文件列表

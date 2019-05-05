@@ -21,7 +21,7 @@ spring:
 
 server:
   port: 9200
-
+  
 hdfs:
   path: hdfs://47.100.116.155:9000
   username: root
@@ -36,4 +36,5 @@ eureka:
 logging:
   level:
     com.web.controller: debug
+    com.web.mapper: debug
 

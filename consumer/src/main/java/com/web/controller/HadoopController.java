@@ -40,20 +40,8 @@ public class HadoopController {
      * @throws Exception
      */
     @PostMapping("/createFile")
-    public ResultDto createFile( @RequestParam("path") String path , @RequestParam("file") MultipartFile file ) throws Exception{
-        return hadoopService.createFile( path , file );
-    }
-
-    /**
-     * 读取HDFS文件内容
-     *
-     * @param path
-     * @return
-     * @throws Exception
-     */
-    @GetMapping("/readFile")
-    public ResultDto readFile( String path ) throws Exception{
-        return hadoopService.readFile( path );
+    public ResultDto createFile( @RequestParam("path") String path , @RequestParam("userId") String userId , @RequestParam("file") MultipartFile file ) throws Exception{
+        return hadoopService.createFile( path , userId , file );
     }
 
     /**
@@ -68,6 +56,20 @@ public class HadoopController {
     public ResultDto readPathInfo( String path , String userId , PageDto pageDto ) throws Exception{
         return hadoopService.readPathInfo( path , userId , pageDto );
     }
+
+    /**
+     * 读取HDFS文件内容
+     *
+     * @param path
+     * @return
+     * @throws Exception
+     */
+    @GetMapping("/readFile")
+    public ResultDto readFile( String path ) throws Exception{
+        return hadoopService.readFile( path );
+    }
+
+
 
     /**
      * 读取文件列表

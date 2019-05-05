@@ -105,6 +105,12 @@ public class RegisterService{
         User user = new User( );
         BeanCopyUtil.copy( userDto , user );
         int i = userMapper.updateByPrimaryKeySelective( user );
+
+        UserType userType = new UserType( );
+        userType.setUserId( userDto.getUserId( ) );
+        userType.setUserType( userDto.getUserType( ) );
+        int u = userTypeMapper.updateByPrimaryKeySelective( userType );
+
         if ( i <= 0 ) {
             return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "修改失败" );
         }

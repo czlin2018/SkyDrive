@@ -5,7 +5,6 @@
 server:
   port: 9100
 
-
 logging:
   level:
     com.web.mapper: debug
