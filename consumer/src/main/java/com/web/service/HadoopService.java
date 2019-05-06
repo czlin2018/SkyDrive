@@ -7,6 +7,7 @@ import com.web.comment.api.HadoopUtil;
 import com.web.comment.unit.PageDto;
 import com.web.comment.unit.ResultDto;
 import com.web.comment.unit.SysExcCode;
+import com.web.entity.Resource;
 import com.web.entity.ResourcePath;
 import com.web.mapper.ResourceMapper;
 import org.apache.hadoop.fs.*;
@@ -36,7 +37,7 @@ public class HadoopService {
     @Autowired
     ResourceMapper resourceMapper;
     @Autowired
-    ResourcePathService resourcePathService;
+    ResourceService resourceService;
 
 
     /**
@@ -84,7 +85,8 @@ public class HadoopService {
         resourcePath.setNodeId(DateApi.getTimeId());
         resourcePath.setNodeName("/" + s);
         resourcePath.setNodePath(path);
-        boolean success = resourcePathService.addResourcePath(resourcePath);
+        resourcePath.setUpdateTime(DateApi.currentDateTime());
+        boolean success = resourceService.addResourcePath(resourcePath);
 
         if(isOk && success){
             return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "创建成功!" , userId );
@@ -110,7 +112,21 @@ public class HadoopService {
         if ( "/".equals( path ) ) {
             path = "";
         }
+
         String fileName = file.getOriginalFilename( );
+
+        //插入资源表,没有"/",插入"/"
+        if(path.length() > 2 && ! path.substring(path.length() - 1, path.length()).equals("/")){
+            path += "/";
+        }
+        Resource resource = new Resource();
+        resource.setResourceId(DateApi.getTimeId());
+        resource.setResourceName(fileName);
+        resource.setPath(path);
+        resource.setFullPath(path + fileName);
+        resource.setUpdateTime(DateApi.currentDateTime());
+        boolean success = resourceService.addResource(resource);
+
         FileSystem fs = HadoopUtil.getFileSystem( );
         // 上传时默认当前目录，后面自动拼接文件的目录
         Path newPath = new Path( path + "/" + fileName );
@@ -119,7 +135,11 @@ public class HadoopService {
         outputStream.write( file.getBytes( ) );
         outputStream.close( );
         fs.close( );
-        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "创建成功!" );
+
+        if(success){
+            return new ResultDto(SysExcCode.SysCommonExcCode.SYS_SUCCESS, "创建成功!", userId);
+        }
+        return new ResultDto(SysExcCode.SysCommonExcCode.SYS_ERROR, "创建失败!");
 
     }
 
@@ -253,8 +273,10 @@ public class HadoopService {
         Path newPath = new Path( path );
         boolean isOk = fs.deleteOnExit( newPath );
         fs.close( );
-        boolean success = resourcePathService.delResourcePath(path);
-        if(isOk && success){
+        boolean success = resourceService.delResourcePath(path);
+        boolean delResource = resourceService.delResource(path);
+        
+        if(isOk && (success || delResource)){
             return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "删除成功!" );
         } else {
             return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "删除失败!" );

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.mapper.ResourcePathMapper">
+    <resultMap id="BaseResultMap" type="com.web.entity.ResourcePath">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <result column="id" jdbcType="INTEGER" property="id"/>
+        <result column="node_id" jdbcType="INTEGER" property="nodeId"/>
+        <result column="node_name" jdbcType="VARCHAR" property="nodeName"/>
+        <result column="node_path" jdbcType="VARCHAR" property="nodePath"/>
+    </resultMap>
+    <delete id="deleteAllPath">
+    delete  FROM resourcePath WHERE node_path LIKE CONCAT( '${path}', '%')
+  </delete>
+    <delete id="deleteFile">
+    delete  FROM resource WHERE full_path=#{path}
+  </delete>
+    <delete id="deleteFileAndPath">
+   delete  FROM resource WHERE full_path LIKE CONCAT( '${path}', '%')
+    </delete>
+</mapper>

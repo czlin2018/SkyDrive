@@ -1,6 +1,8 @@
 package com.web.service;
 
+import com.web.entity.Resource;
 import com.web.entity.ResourcePath;
+import com.web.mapper.ResourceMapper;
 import com.web.mapper.ResourcePathMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,13 +15,15 @@ import org.springframework.stereotype.Service;
  * @创建时间: 下午3:00
  */
 @Service
-public class ResourcePathService{
+public class ResourceService{
 
     @Autowired
     ResourcePathMapper resourcePathMapper;
+    @Autowired
+    ResourceMapper resourceManager;
 
     /**
-     * 插入
+     * 插入文件表
      */
     public boolean addResourcePath (ResourcePath path){
         int i = resourcePathMapper.insertSelective(path);
@@ -30,15 +34,43 @@ public class ResourcePathService{
     }
 
     /**
-     * 删除
+     * 删除文件表
      */
     public boolean delResourcePath (String path){
+        //删除文件夹
         int i = resourcePathMapper.deleteAllPath(path);
+        //删除文件夹下文件
+        int i1 = resourcePathMapper.deleteFileAndPath(path);
+
         if(i <= 0){
             return false;
         }
         return true;
     }
+
+    /**
+     * 插入资源表
+     */
+    public boolean addResource (Resource resource){
+        int i = resourceManager.insertSelective(resource);
+        if(i <= 0){
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * 删除文件表
+     */
+    public boolean delResource (String path){
+        int i = resourcePathMapper.deleteFile(path);
+        if(i <= 0){
+            return false;
+        }
+        return true;
+    }
+    
+    
 
 
 }
