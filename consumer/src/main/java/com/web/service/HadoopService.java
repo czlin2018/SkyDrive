@@ -2,11 +2,12 @@ package com.web.service;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.web.comment.api.DateApi;
 import com.web.comment.api.HadoopUtil;
 import com.web.comment.unit.PageDto;
 import com.web.comment.unit.ResultDto;
 import com.web.comment.unit.SysExcCode;
-import com.web.entity.Resource;
+import com.web.entity.ResourcePath;
 import com.web.mapper.ResourceMapper;
 import org.apache.hadoop.fs.*;
 import org.apache.hadoop.io.IOUtils;
@@ -16,7 +17,10 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.InputStream;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @描述:
@@ -31,6 +35,8 @@ public class HadoopService {
 
     @Autowired
     ResourceMapper resourceMapper;
+    @Autowired
+    ResourcePathService resourcePathService;
 
 
     /**
@@ -41,9 +47,15 @@ public class HadoopService {
      * @return
      */
     public String getPath( String userId , String path ){
-        if ( StringUtils.isEmpty( userId ) )
+        if(StringUtils.isEmpty(userId)){
             return path;
-        return "/" + userId + "/" + path;
+        }
+
+        String[] split = path.split("/");
+        if(split.length > 1 && split[1].equals(userId)){
+            return path;
+        }
+        return "/" + userId + path;
     }
 
 
@@ -55,7 +67,6 @@ public class HadoopService {
      * @throws Exception
      */
     public ResultDto mkdir( String path , String userId ) throws Exception{
-
         path = getPath( userId , path );
 
         // 文件对象
@@ -65,15 +76,17 @@ public class HadoopService {
         // 创建空文件夹
         boolean isOk = fs.mkdirs( newPath );
         fs.close( );
-        if ( isOk ) {
-            Resource resource = new Resource( );
-            resource.setResourceId( "1" );
-            resource.setFullPath( "1" );
-            resource.setPath( "1" );
-            resource.setResourceName( "1" );
-            resource.setUpdateTime( new Date( ) );
-            resourceMapper.insertSelective( resource );
 
+        //插入路径表
+        String[] split = path.split("/");
+        String s = split[split.length - 1];
+        ResourcePath resourcePath = new ResourcePath();
+        resourcePath.setNodeId(DateApi.getTimeId());
+        resourcePath.setNodeName("/" + s);
+        resourcePath.setNodePath(path);
+        boolean success = resourcePathService.addResourcePath(resourcePath);
+
+        if(isOk && success){
             return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "创建成功!" , userId );
         }
         return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "创建失败!" );
@@ -93,7 +106,7 @@ public class HadoopService {
         if ( StringUtils.isEmpty( path ) || null == file.getBytes( ) ) {
             return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "请求参数为空!" );
         }
-        // path = getPath( userId , path );
+        path = getPath(userId, path);
         if ( "/".equals( path ) ) {
             path = "";
         }
@@ -240,7 +253,8 @@ public class HadoopService {
         Path newPath = new Path( path );
         boolean isOk = fs.deleteOnExit( newPath );
         fs.close( );
-        if ( isOk ) {
+        boolean success = resourcePathService.delResourcePath(path);
+        if(isOk && success){
             return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "删除成功!" );
         } else {
             return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "删除失败!" );

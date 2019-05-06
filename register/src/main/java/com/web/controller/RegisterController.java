@@ -29,10 +29,10 @@ public class RegisterController{
      *
      * @return
      */
-    @GetMapping(value = "/hello")
-    public String hello (){
-        return registerService.hello();
-    }
+//    @GetMapping(value = "/hello")
+//    public String hello (){
+//        return registerService.hello();
+//    }
 
     /**
      * 注册用户

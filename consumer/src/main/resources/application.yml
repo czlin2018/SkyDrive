@@ -2,7 +2,7 @@
 #  profiles: beta #激活环境
 spring:
   application:
-    name: consumer-01
+    name: hadoop
   http:
     encoding:
       charset: utf-8
@@ -17,6 +17,15 @@ spring:
     host: 47.106.36.62
     port: 6379
     password: redis
+
+
+
+    #生成的xml需要在此处注册，（存在bug，实际上使用包.*.xml即可，但是出现了问题）
+mybatis:
+  mapper-locations:  classpath:sqlMap/ResourcePathMapper.xml
+  configuration:
+    mapUnderscoreToCamelCase: true
+
 
 
 server:
