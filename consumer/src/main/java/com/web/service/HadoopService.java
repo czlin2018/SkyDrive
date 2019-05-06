@@ -80,11 +80,30 @@ public class HadoopService {
 
         //插入路径表
         String[] split = path.split("/");
+        //说明是新建二级
+
+        if ( split.length == 3 ) {
+
+            ResourcePath resourcePath = new ResourcePath( );
+            resourcePath.setNodeId( DateApi.getTimeId( ) );
+            resourcePath.setNodeName( userId );
+            resourcePath.setNodePath( "/" + userId );
+            resourcePath.setIsFrist( 1 );
+            resourcePath.setFatherNode( "" );
+            resourcePath.setUpdateTime( DateApi.currentDateTime( ) );
+            if ( ! resourceService.selectFirst( resourcePath.getNodeName( ) , resourcePath.getNodePath( ) ) ) {
+                resourceService.addResourcePath( resourcePath );
+            }
+
+        }
+
         String s = split[split.length - 1];
         ResourcePath resourcePath = new ResourcePath();
         resourcePath.setNodeId(DateApi.getTimeId());
-        resourcePath.setNodeName("/" + s);
+        resourcePath.setNodeName( s );
         resourcePath.setNodePath(path);
+        resourcePath.setFatherNode( path.substring( 0 , path.length( ) - 1 - resourcePath.getNodeName( ).length( ) ) );
+        resourcePath.setIsFrist( 0 );
         resourcePath.setUpdateTime(DateApi.currentDateTime());
         boolean success = resourceService.addResourcePath(resourcePath);
 
@@ -115,15 +134,16 @@ public class HadoopService {
 
         String fileName = file.getOriginalFilename( );
 
+        String fullPath = path + fileName;
         //插入资源表,没有"/",插入"/"
         if(path.length() > 2 && ! path.substring(path.length() - 1, path.length()).equals("/")){
-            path += "/";
+            fullPath = path + "/" + fileName;
         }
         Resource resource = new Resource();
         resource.setResourceId(DateApi.getTimeId());
         resource.setResourceName(fileName);
         resource.setPath(path);
-        resource.setFullPath(path + fileName);
+        resource.setFullPath( fullPath );
         resource.setUpdateTime(DateApi.currentDateTime());
         boolean success = resourceService.addResource(resource);
 
@@ -143,6 +163,24 @@ public class HadoopService {
 
     }
 
+    /**
+     * 读取HDFS目录信息 -----DB
+     *
+     * @param path
+     * @param pageDto
+     * @param userType
+     * @return
+     * @throws Exception
+     */
+    public ResultDto readPathInfoFromDb( String path , String userId , PageDto pageDto , String userType ){
+        path = getPath( userId , path );
+        Page <Object> objectPage = PageHelper.startPage( pageDto.getPageNo( ) , pageDto.getPageSize( ) );
+        List <Map <String, Object>> list = resourceService.readPathInfoFromDb( path , userId , userType );
+
+        pageDto.setTotalCount( objectPage.getTotal( ) );
+        pageDto.setPageData( list );
+        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "读取成功!" , pageDto );
+    }
     /**
      * 读取HDFS目录信息
      *
@@ -273,10 +311,13 @@ public class HadoopService {
         Path newPath = new Path( path );
         boolean isOk = fs.deleteOnExit( newPath );
         fs.close( );
-        boolean success = resourceService.delResourcePath(path);
-        boolean delResource = resourceService.delResource(path);
-        
-        if(isOk && (success || delResource)){
+        //删除文件夹
+        resourceService.delResourcePath( path );
+
+        //删除文件
+        resourceService.delResource( path );
+
+        if ( isOk ) {
             return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "删除成功!" );
         } else {
             return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "删除失败!" );
@@ -361,5 +402,7 @@ public class HadoopService {
 
 
     }
+
+
 }
 

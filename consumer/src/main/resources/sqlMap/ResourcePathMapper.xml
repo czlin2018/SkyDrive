@@ -19,4 +19,45 @@
     <delete id="deleteFileAndPath">
    delete  FROM resource WHERE full_path LIKE CONCAT( '${path}', '%')
     </delete>
+    <select id="selectFirst" resultType="java.lang.Integer">
+        select  COUNT(id) from resourcePath where node_path=#{nodePath} and node_name=#{nodeName}
+    </select>
+    <select id="readPathInfoFromDb" resultType="java.util.Map">
+        SELECT
+        node_name as name,
+        TRUE as directory,
+        "" as fullPath
+        FROM
+        resourcePath
+        <choose>
+            <when test="path==''">
+                WHERE is_frist=1
+            </when>
+            <otherwise>
+                WHERE father_node=#{path}
+            </otherwise>
+        </choose>
+        UNION
+        SELECT
+        resource_name as name,
+        FALSE as directory,
+        full_path as fullPath
+        FROM
+        resource
+        WHERE
+        path=#{path}
+        <if test="userType=='user'">
+            UNION
+            SELECT
+            r.resource_name as name,
+            FALSE as directory,
+            r.full_path as fullPath
+            FROM share s
+            LEFT JOIN resource r
+            on s.resource_id=r.resource_id
+            WHERE s.user_id=#{userId}
+            and invented_path=#{path}
+        </if>
+
+    </select>
 </mapper>

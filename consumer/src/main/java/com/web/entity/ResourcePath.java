@@ -22,6 +22,11 @@ public class ResourcePath implements Serializable{
 
     @Column(name = "node_path")
     private String nodePath;
+    @Column(name = "father_node")
+    private String fatherNode;
+
+    @Column(name = "is_frist")
+    private Integer isFrist;
 
     @Column(name = "update_time")
     private Date updateTime;

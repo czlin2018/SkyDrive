@@ -7,6 +7,9 @@ import com.web.mapper.ResourcePathMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * @描述:
  * @公司: lumi
@@ -23,6 +26,19 @@ public class ResourceService{
     ResourceMapper resourceManager;
 
     /**
+     * 防止插入根目录
+     */
+    public boolean selectFirst( String nodeName , String nodePath ){
+
+        int i = resourcePathMapper.selectFirst( nodeName , nodePath );
+        if ( i == 0 ) {
+            return false;
+        }
+        return true;
+    }
+
+
+    /**
      * 插入文件表
      */
     public boolean addResourcePath (ResourcePath path){
@@ -37,12 +53,13 @@ public class ResourceService{
      * 删除文件表
      */
     public boolean delResourcePath (String path){
-        //删除文件夹
+        //删除文件夹,及下面文件夹
         int i = resourcePathMapper.deleteAllPath(path);
-        //删除文件夹下文件
+
+        //删除文件夹下文件,及下文件
         int i1 = resourcePathMapper.deleteFileAndPath(path);
 
-        if(i <= 0){
+        if ( i <= 0 ) {
             return false;
         }
         return true;
@@ -69,8 +86,21 @@ public class ResourceService{
         }
         return true;
     }
-    
-    
 
-
+    /**
+     * 读取HDFS目录信息 -----DB
+     *
+     * @param path
+     * @param userId
+     * @param userType
+     * @return
+     * @throws Exception
+     */
+    public List <Map <String, Object>> readPathInfoFromDb( String path , String userId , String userType ){
+        if ( "/".equals( path ) ) {
+            path = "";
+        }
+        List <Map <String, Object>> list = resourcePathMapper.readPathInfoFromDb( path , userId , userType );
+        return list;
+    }
 }

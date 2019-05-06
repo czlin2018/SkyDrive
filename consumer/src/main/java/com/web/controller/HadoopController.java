@@ -53,8 +53,9 @@ public class HadoopController {
      */
 
     @GetMapping("/readPathInfo")
-    public ResultDto readPathInfo( String path , String userId , PageDto pageDto ) throws Exception{
-        return hadoopService.readPathInfo( path , userId , pageDto );
+    public ResultDto readPathInfo( String path , String userId , String userType , PageDto pageDto ) throws Exception{
+        // return hadoopService.readPathInfo( path , userId , pageDto );
+        return hadoopService.readPathInfoFromDb( path , userId , pageDto , userType );
     }
 
     /**
