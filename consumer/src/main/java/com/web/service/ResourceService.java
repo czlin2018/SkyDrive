@@ -100,6 +100,9 @@ public class ResourceService{
         if ( "/".equals( path ) ) {
             path = "";
         }
+        if ( path.length( ) > 2 && path.substring( path.length( ) - 1 , path.length( ) ).equals( "/" ) ) {
+            path = path.substring( 0 , path.length( ) - 1 );
+        }
         List <Map <String, Object>> list = resourcePathMapper.readPathInfoFromDb( path , userId , userType );
         return list;
     }
