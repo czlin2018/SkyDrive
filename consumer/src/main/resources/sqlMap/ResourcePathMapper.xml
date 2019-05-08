@@ -26,7 +26,8 @@
         SELECT
         node_name as name,
         TRUE as directory,
-        "" as fullPath
+        "" as fullPath,
+        update_time updateTime
         FROM
         resourcePath
         <choose>
@@ -41,7 +42,8 @@
         SELECT
         resource_name as name,
         FALSE as directory,
-        full_path as fullPath
+        full_path as fullPath ,
+        update_time updateTime
         FROM
         resource
         WHERE
@@ -51,7 +53,8 @@
             SELECT
             r.resource_name as name,
             FALSE as directory,
-            r.full_path as fullPath
+            r.full_path as fullPath,
+            s.update_time updateTime
             FROM share s
             LEFT JOIN resource r
             on s.resource_id=r.resource_id
@@ -59,5 +62,8 @@
             and invented_path=#{path}
         </if>
 
+    </select>
+    <select id="getResourceId" resultType="java.lang.String">
+        SELECT resource_id FROM resource WHERE full_path=#{fullPath}
     </select>
 </mapper>

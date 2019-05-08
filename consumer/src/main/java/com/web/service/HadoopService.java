@@ -400,9 +400,20 @@ public class HadoopService {
             fs.close( );
         }
 
-
     }
 
-
+    /**
+     * 生成分享码
+     *
+     * @param fullPath
+     * @return
+     */
+    public ResultDto createCode (String fullPath){
+        String code = resourceService.createCode(fullPath);
+        if(null == code){
+            return new ResultDto(SysExcCode.SysCommonExcCode.SYS_ERROR, "分享码生成失败");
+        }
+        return new ResultDto(SysExcCode.SysCommonExcCode.SYS_SUCCESS, "分享码生成失败", code);
+    }
 }
 

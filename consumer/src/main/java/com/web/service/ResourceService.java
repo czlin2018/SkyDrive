@@ -1,12 +1,18 @@
 package com.web.service;
 
+import com.web.comment.api.DateApi;
 import com.web.entity.Resource;
+import com.web.entity.ResourceMapping;
 import com.web.entity.ResourcePath;
 import com.web.mapper.ResourceMapper;
+import com.web.mapper.ResourceMappingMapper;
 import com.web.mapper.ResourcePathMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +30,8 @@ public class ResourceService{
     ResourcePathMapper resourcePathMapper;
     @Autowired
     ResourceMapper resourceManager;
+    @Autowired
+    ResourceMappingMapper resourceMappingMapper;
 
     /**
      * 防止插入根目录
@@ -104,6 +112,33 @@ public class ResourceService{
             path = path.substring( 0 , path.length( ) - 1 );
         }
         List <Map <String, Object>> list = resourcePathMapper.readPathInfoFromDb( path , userId , userType );
+        for(Map< String, Object > stringObjectMap : list){
+            //  System.out.println(stringObjectMap.get("updateTime").getClass());
+            String strFormat = "yyyy-MM-dd HH:mm:ss";
+            DateFormat df = new SimpleDateFormat(strFormat);
+            String str = df.format(stringObjectMap.get("updateTime"));
+            stringObjectMap.put("updateTime", str);
+        }
         return list;
     }
+
+    /**
+     * 获得分享码
+     */
+    public String createCode (String fullPath){
+        String resourceId = resourcePathMapper.getResourceId(fullPath);
+        ResourceMapping resourceMapping = new ResourceMapping();
+        resourceMapping.setMappingId(DateApi.getTimeId());
+        resourceMapping.setResourceId(resourceId);
+        resourceMapping.setTakeCode(String.valueOf(new Date().getTime()));
+        resourceMapping.setUpdateTime(DateApi.currentDateTime());
+        int i = resourceMappingMapper.insertSelective(resourceMapping);
+        if(i > 0){
+            return resourceMapping.getTakeCode();
+        }
+        return null;
+    }
+
+
+
 }

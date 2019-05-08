@@ -4,6 +4,7 @@ import com.web.comment.unit.PageDto;
 import com.web.comment.unit.ResultDto;
 import com.web.dto.HadoopDto;
 import com.web.service.HadoopService;
+import com.web.service.ResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -18,6 +19,9 @@ public class HadoopController {
 
     @Autowired
     HadoopService hadoopService;
+
+    @Autowired
+    ResourceService resourceService;
 
     /**
      * 创建文件夹
@@ -145,6 +149,19 @@ public class HadoopController {
     @PostMapping("/copyFile")
     public ResultDto copyFile( @RequestBody HadoopDto hadoopDto ) throws Exception{
         return hadoopService.copyFile( hadoopDto.getSourcePath( ) , hadoopDto.getTargetPath( ) );
+    }
+
+    /**
+     * 生成分享码
+     *
+     * @param hadoopDto
+     * @return
+     * @throws Exception
+     */
+    @PostMapping("/createCode")
+    public ResultDto readPathInfo (@RequestBody HadoopDto hadoopDto) throws Exception{
+
+        return hadoopService.createCode(hadoopDto.getFullPath());
     }
 
 }

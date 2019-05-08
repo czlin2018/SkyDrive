@@ -21,4 +21,6 @@ public interface ResourcePathMapper extends Mapper< ResourcePath >{
     List <Map <String, Object>> readPathInfoFromDb( @Param("path") String path ,
                                                     @Param("userId") String userId ,
                                                     @Param("userType") String userType );
+
+    String getResourceId (@Param("fullPath") String fullPath);
 }

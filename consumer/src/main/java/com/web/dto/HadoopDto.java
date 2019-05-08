@@ -22,4 +22,5 @@ public class HadoopDto {
     String sourcePath;
     String targetPath;
     String userId;
+    String fullPath;
 }
