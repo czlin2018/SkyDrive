@@ -311,11 +311,16 @@ public class HadoopService {
         Path newPath = new Path( path );
         boolean isOk = fs.deleteOnExit( newPath );
         fs.close( );
+
+        //删除分享表文件
+        resourceService.delSharedResource( path );
+
         //删除文件夹
         resourceService.delResourcePath( path );
 
         //删除文件
         resourceService.delResource( path );
+
 
         if ( isOk ) {
             return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "删除成功!" );
@@ -413,7 +418,22 @@ public class HadoopService {
         if(null == code){
             return new ResultDto(SysExcCode.SysCommonExcCode.SYS_ERROR, "分享码生成失败");
         }
-        return new ResultDto(SysExcCode.SysCommonExcCode.SYS_SUCCESS, "分享码生成失败", code);
+        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "分享码生成成功" , code );
+    }
+
+    /**
+     * 生成分享码
+     *
+     * @param
+     * @return
+     */
+    public ResultDto getCode( String path , String fileCodeFromOter , String userId ){
+        path = getPath( userId , path );
+        boolean b = resourceService.getCode( path , fileCodeFromOter , userId );
+        if ( ! b ) {
+            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "获取失败" );
+        }
+        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "获取成功" );
     }
 }
 

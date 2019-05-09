@@ -23,4 +23,10 @@ public interface ResourcePathMapper extends Mapper< ResourcePath >{
                                                     @Param("userType") String userType );
 
     String getResourceId (@Param("fullPath") String fullPath);
+
+    String getResourceIdFromMapper( @Param("fileCodeFromOter") String fileCodeFromOter );
+
+    void delSharedResource( @Param("resourceId") String resourceId );
+
+    void delMappingResource( @Param("resourceId") String resourceId );
 }

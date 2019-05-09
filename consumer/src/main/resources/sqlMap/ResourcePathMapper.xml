@@ -19,6 +19,12 @@
     <delete id="deleteFileAndPath">
    delete  FROM resource WHERE full_path LIKE CONCAT( '${path}', '%')
     </delete>
+    <delete id="delSharedResource">
+        delete  FROM share WHERE resource_id=#{resourceId}
+    </delete>
+    <delete id="delMappingResource">
+       delete  FROM resourceMapping WHERE resource_id=#{resourceId}
+    </delete>
     <select id="selectFirst" resultType="java.lang.Integer">
         select  COUNT(id) from resourcePath where node_path=#{nodePath} and node_name=#{nodeName}
     </select>
@@ -48,22 +54,31 @@
         resource
         WHERE
         path=#{path}
-        <if test="userType=='user'">
-            UNION
-            SELECT
-            r.resource_name as name,
-            FALSE as directory,
-            r.full_path as fullPath,
-            s.update_time updateTime
-            FROM share s
-            LEFT JOIN resource r
-            on s.resource_id=r.resource_id
-            WHERE s.user_id=#{userId}
-            and invented_path=#{path}
-        </if>
+        UNION
+        SELECT
+        r.resource_name as name,
+        FALSE as directory,
+        r.full_path as fullPath,
+        s.update_time updateTime
+        FROM share s
+        LEFT JOIN resource r
+        on s.resource_id=r.resource_id
+        <choose>
+            <when test="userType=='user'">
+                WHERE s.user_id=#{userId}
+            </when>
+            <otherwise>
+                WHERE 1=1
+            </otherwise>
+        </choose>
+        and invented_path=#{path}
+
 
     </select>
     <select id="getResourceId" resultType="java.lang.String">
         SELECT resource_id FROM resource WHERE full_path=#{fullPath}
+    </select>
+    <select id="getResourceIdFromMapper" resultType="java.lang.String">
+        SELECT resource_id FROM  resourceMapping WHERE take_code=#{fileCodeFromOter}
     </select>
 </mapper>

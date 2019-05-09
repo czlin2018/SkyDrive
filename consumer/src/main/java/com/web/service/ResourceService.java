@@ -4,9 +4,11 @@ import com.web.comment.api.DateApi;
 import com.web.entity.Resource;
 import com.web.entity.ResourceMapping;
 import com.web.entity.ResourcePath;
+import com.web.entity.Share;
 import com.web.mapper.ResourceMapper;
 import com.web.mapper.ResourceMappingMapper;
 import com.web.mapper.ResourcePathMapper;
+import com.web.mapper.ShareMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +34,8 @@ public class ResourceService{
     ResourceMapper resourceManager;
     @Autowired
     ResourceMappingMapper resourceMappingMapper;
+    @Autowired
+    ShareMapper shareMapper;
 
     /**
      * 防止插入根目录
@@ -139,6 +143,37 @@ public class ResourceService{
         return null;
     }
 
+    /**
+     * 获得分享
+     */
+    public boolean getCode( String path , String fileCodeFromOter , String userId ){
+        String resourceId = resourcePathMapper.getResourceIdFromMapper( fileCodeFromOter );
+        Share share = new Share( );
 
+        if ( path.length( ) > 2 && path.substring( path.length( ) - 1 , path.length( ) ).equals( "/" ) ) {
+            path = path.substring( 0 , path.length( ) - 1 );
+        }
+        share.setInventedPath( path );
+        share.setResourceId( resourceId );
+        share.setUserId( userId );
+        share.setUpdateTime( DateApi.currentDateTime( ) );
+        int i = shareMapper.insertSelective( share );
+        if ( i <= 0 ) {
+            return false;
+        }
+        return true;
+    }
 
+    /**
+     * 删除分享表文件
+     *
+     * @param path
+     */
+    public void delSharedResource( String path ){
+        String resourceId = resourcePathMapper.getResourceId( path );
+        //删除分享表
+        resourcePathMapper.delSharedResource( resourceId );
+        //删除映射表
+        resourcePathMapper.delMappingResource( resourceId );
+    }
 }

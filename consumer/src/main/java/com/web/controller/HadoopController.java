@@ -159,9 +159,19 @@ public class HadoopController {
      * @throws Exception
      */
     @PostMapping("/createCode")
-    public ResultDto readPathInfo (@RequestBody HadoopDto hadoopDto) throws Exception{
-
+    public ResultDto readPathInfo( @RequestBody HadoopDto hadoopDto ){
         return hadoopService.createCode(hadoopDto.getFullPath());
     }
 
+    /**
+     * 获得分享
+     *
+     * @param hadoopDto
+     * @return
+     * @throws Exception
+     */
+    @PostMapping("/getCode")
+    public ResultDto getCode( @RequestBody HadoopDto hadoopDto ){
+        return hadoopService.getCode( hadoopDto.getPath( ) , hadoopDto.getFileCodeFromOter( ) , hadoopDto.getUserId( ) );
+    }
 }
