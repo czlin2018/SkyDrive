@@ -22,7 +22,8 @@ spring:
 
     #生成的xml需要在此处注册，（存在bug，实际上使用包.*.xml即可，但是出现了问题）
 mybatis:
-  mapper-locations:  classpath:sqlMap/ResourcePathMapper.xml
+  mapper-locations:  classpath:sqlMap/ResourcePathMapper.xml,
+    classpath:sqlMap/ResourceMapper.xml
   configuration:
     mapUnderscoreToCamelCase: true
 

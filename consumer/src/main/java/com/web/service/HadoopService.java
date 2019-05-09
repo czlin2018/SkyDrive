@@ -47,16 +47,24 @@ public class HadoopService {
      * @param path
      * @return
      */
-    public String getPath( String userId , String path ){
-        if(StringUtils.isEmpty(userId)){
-            return path;
+    public String getPath (String userId, String path, String userType, boolean insert){
+
+        //插入
+        if(insert){
+            //如果是一级，那都加上前缀
+            if("/".equals(path))
+                return "/" + userId;
         }
 
-        String[] split = path.split("/");
-        if(split.length > 1 && split[1].equals(userId)){
-            return path;
+        //不是插入
+        if("user".equals(userType)){
+            if("/".equals(path))
+                return "/" + userId;
+            else
+                return "/" + userId + path;
         }
-        return "/" + userId + path;
+        return path;
+
     }
 
 
@@ -64,45 +72,43 @@ public class HadoopService {
      * 创建文件夹
      *
      * @param path
+     * @param userType
      * @return
      * @throws Exception
      */
-    public ResultDto mkdir( String path , String userId ) throws Exception{
-        path = getPath( userId , path );
+    public ResultDto mkdir (String path, String directoryName, String userId, String userType) throws Exception{
+        path = getPath(userId, path, userType, true);
 
         // 文件对象
         FileSystem fs = HadoopUtil.getFileSystem( );
         // 目标路径
-        Path newPath = new Path( path );
+        Path newPath = new Path(path + "/" + directoryName);
         // 创建空文件夹
         boolean isOk = fs.mkdirs( newPath );
         fs.close( );
 
         //插入路径表
+        //说明是新建二级,需要插入根目录
         String[] split = path.split("/");
-        //说明是新建二级
-
-        if ( split.length == 3 ) {
-
+        if(split.length == 2){
             ResourcePath resourcePath = new ResourcePath( );
             resourcePath.setNodeId( DateApi.getTimeId( ) );
             resourcePath.setNodeName( userId );
-            resourcePath.setNodePath( "/" + userId );
+            resourcePath.setNodePath(path);
             resourcePath.setIsFrist( 1 );
-            resourcePath.setFatherNode( "" );
+            resourcePath.setFatherNode("/");
             resourcePath.setUpdateTime( DateApi.currentDateTime( ) );
             if ( ! resourceService.selectFirst( resourcePath.getNodeName( ) , resourcePath.getNodePath( ) ) ) {
                 resourceService.addResourcePath( resourcePath );
             }
 
         }
-
-        String s = split[split.length - 1];
+        //插入目录
         ResourcePath resourcePath = new ResourcePath();
         resourcePath.setNodeId(DateApi.getTimeId());
-        resourcePath.setNodeName( s );
-        resourcePath.setNodePath(path);
-        resourcePath.setFatherNode( path.substring( 0 , path.length( ) - 1 - resourcePath.getNodeName( ).length( ) ) );
+        resourcePath.setNodeName(directoryName);
+        resourcePath.setNodePath(path + "/" + directoryName);
+        resourcePath.setFatherNode(path);
         resourcePath.setIsFrist( 0 );
         resourcePath.setUpdateTime(DateApi.currentDateTime());
         boolean success = resourceService.addResourcePath(resourcePath);
@@ -123,23 +129,16 @@ public class HadoopService {
      * @throws Exception
      */
 
-    public ResultDto createFile( String path , String userId , MultipartFile file ) throws Exception{
+    public ResultDto createFile (String path, String userId, MultipartFile file, String userType) throws Exception{
         if ( StringUtils.isEmpty( path ) || null == file.getBytes( ) ) {
             return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "请求参数为空!" );
         }
-        path = getPath(userId, path);
-        if ( "/".equals( path ) ) {
-            path = "";
-        }
-
+        path = getPath(userId, path, userType, true);
         String fileName = file.getOriginalFilename( );
-
-        String fullPath = path + fileName;
-        //插入资源表,没有"/",插入"/"
-        if(path.length() > 2 && ! path.substring(path.length() - 1, path.length()).equals("/")){
-            fullPath = path + "/" + fileName;
-        }
+        String fullPath = path + "/" + fileName;
+        //插入文件表
         Resource resource = new Resource();
+        resource.setUserId(userId);
         resource.setResourceId(DateApi.getTimeId());
         resource.setResourceName(fileName);
         resource.setPath(path);
@@ -149,7 +148,7 @@ public class HadoopService {
 
         FileSystem fs = HadoopUtil.getFileSystem( );
         // 上传时默认当前目录，后面自动拼接文件的目录
-        Path newPath = new Path( path + "/" + fileName );
+        Path newPath = new Path(fullPath);
         // 打开一个输出流
         FSDataOutputStream outputStream = fs.create( newPath );
         outputStream.write( file.getBytes( ) );
@@ -173,10 +172,9 @@ public class HadoopService {
      * @throws Exception
      */
     public ResultDto readPathInfoFromDb( String path , String userId , PageDto pageDto , String userType ){
-        path = getPath( userId , path );
+        path = getPath(userId, path, userType, false);
         Page <Object> objectPage = PageHelper.startPage( pageDto.getPageNo( ) , pageDto.getPageSize( ) );
         List <Map <String, Object>> list = resourceService.readPathInfoFromDb( path , userId , userType );
-
         pageDto.setTotalCount( objectPage.getTotal( ) );
         pageDto.setPageData( list );
         return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "读取成功!" , pageDto );
@@ -189,9 +187,10 @@ public class HadoopService {
      * @return
      * @throws Exception
      */
+    //TODO 方法已经废弃
     public ResultDto readPathInfo( String path , String userId , PageDto pageDto ) throws Exception{
 
-        path = getPath( userId , path );
+        //path = getPath( userId , path );
 
         Page <Object> objectPage = PageHelper.startPage( pageDto.getPageNo( ) , pageDto.getPageSize( ) );
         FileSystem fs = HadoopUtil.getFileSystem( );
@@ -302,32 +301,42 @@ public class HadoopService {
     /**
      * 删除文件
      *
-     * @param path
+     * @param fullPath
      * @return
      * @throws Exception
      */
-    public ResultDto deleteFile( String path ) throws Exception{
-        FileSystem fs = HadoopUtil.getFileSystem( );
-        Path newPath = new Path( path );
-        boolean isOk = fs.deleteOnExit( newPath );
-        fs.close( );
+    public ResultDto deleteFile (String fullPath, String id, boolean isShare) throws Exception{
+        if(! isShare){
+            FileSystem fs = HadoopUtil.getFileSystem();
+            Path newPath = new Path(fullPath);
+            boolean isOk = fs.deleteOnExit(newPath);
+            fs.close();
 
-        //删除分享表文件
-        resourceService.delSharedResource( path );
+            //删除分享表文件
+            resourceService.delSharedResource(fullPath);
 
-        //删除文件夹
-        resourceService.delResourcePath( path );
+            //删除文件夹
+            resourceService.delResourcePath(fullPath);
 
-        //删除文件
-        resourceService.delResource( path );
+            //删除文件
+            resourceService.delResource(fullPath);
 
-
-        if ( isOk ) {
-            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "删除成功!" );
-        } else {
-            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "删除失败!" );
+            if(isOk){
+                return new ResultDto(SysExcCode.SysCommonExcCode.SYS_SUCCESS, "删除成功!");
+            } else{
+                return new ResultDto(SysExcCode.SysCommonExcCode.SYS_ERROR, "删除失败!");
+            }
         }
+        if(isShare){
+            boolean b = resourceService.delSharedResourceId(id);
+            if(b){
+                return new ResultDto(SysExcCode.SysCommonExcCode.SYS_SUCCESS, "删除成功!");
+            } else{
+                return new ResultDto(SysExcCode.SysCommonExcCode.SYS_ERROR, "删除失败!");
+            }
 
+        }
+        return new ResultDto(SysExcCode.SysCommonExcCode.SYS_ERROR, "删除失败,参数错误!");
     }
 
     /**
@@ -422,18 +431,28 @@ public class HadoopService {
     }
 
     /**
-     * 生成分享码
+     * 获得分享
      *
      * @param
      * @return
      */
-    public ResultDto getCode( String path , String fileCodeFromOter , String userId ){
-        path = getPath( userId , path );
+    public ResultDto getCode (String path, String fileCodeFromOter, String userId, String userType){
+        path = getPath(userId, path, userType, true);
         boolean b = resourceService.getCode( path , fileCodeFromOter , userId );
         if ( ! b ) {
             return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "获取失败" );
         }
         return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "获取成功" );
+    }
+
+    /**
+     * 获得资源数量
+     *
+     * @return
+     */
+    public ResultDto getSourceNum (String userId){
+        int sourceNum = resourceMapper.getSourceNum(userId);
+        return new ResultDto(SysExcCode.SysCommonExcCode.SYS_SUCCESS, "获取成功", sourceNum);
     }
 }
 

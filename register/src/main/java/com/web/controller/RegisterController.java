@@ -102,6 +102,15 @@ public class RegisterController{
         return registerService.update( userDto );
     }
 
+    /**
+     * 获得注册数量
+     *
+     * @return
+     */
+    @GetMapping(value = Url.REGISTER.GET_USER_NUM)
+    public ResultDto getUserNum (){
+        return registerService.getUserNum();
+    }
 
 
 }

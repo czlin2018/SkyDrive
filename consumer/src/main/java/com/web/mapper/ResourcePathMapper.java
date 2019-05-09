@@ -29,4 +29,6 @@ public interface ResourcePathMapper extends Mapper< ResourcePath >{
     void delSharedResource( @Param("resourceId") String resourceId );
 
     void delMappingResource( @Param("resourceId") String resourceId );
+
+    int delSharedResourceId (@Param("id") String id);
 }

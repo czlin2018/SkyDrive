@@ -14,6 +14,10 @@ public class Share implements Serializable {
     @Id
     @Column(name = "user_id")
     private String userId;
+
+    @Column(name = "share_id")
+    private String shareId;
+
     @Column(name = "resource_id")
     private String resourceId;
 

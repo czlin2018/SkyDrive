@@ -109,15 +109,8 @@ public class ResourceService{
      * @throws Exception
      */
     public List <Map <String, Object>> readPathInfoFromDb( String path , String userId , String userType ){
-        if ( "/".equals( path ) ) {
-            path = "";
-        }
-        if ( path.length( ) > 2 && path.substring( path.length( ) - 1 , path.length( ) ).equals( "/" ) ) {
-            path = path.substring( 0 , path.length( ) - 1 );
-        }
         List <Map <String, Object>> list = resourcePathMapper.readPathInfoFromDb( path , userId , userType );
         for(Map< String, Object > stringObjectMap : list){
-            //  System.out.println(stringObjectMap.get("updateTime").getClass());
             String strFormat = "yyyy-MM-dd HH:mm:ss";
             DateFormat df = new SimpleDateFormat(strFormat);
             String str = df.format(stringObjectMap.get("updateTime"));
@@ -153,6 +146,7 @@ public class ResourceService{
         if ( path.length( ) > 2 && path.substring( path.length( ) - 1 , path.length( ) ).equals( "/" ) ) {
             path = path.substring( 0 , path.length( ) - 1 );
         }
+        share.setShareId(DateApi.getTimeId());
         share.setInventedPath( path );
         share.setResourceId( resourceId );
         share.setUserId( userId );
@@ -175,5 +169,16 @@ public class ResourceService{
         resourcePathMapper.delSharedResource( resourceId );
         //删除映射表
         resourcePathMapper.delMappingResource( resourceId );
+    }
+
+    /**
+     * 根据id删除分享表文件
+     */
+    public boolean delSharedResourceId (String id){
+        //删除分享表
+        int i = resourcePathMapper.delSharedResourceId(id);
+        if(i > 0)
+            return true;
+        return false;
     }
 }

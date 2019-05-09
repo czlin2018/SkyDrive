@@ -26,7 +26,7 @@ public class DateApi{
     public static String getTimeId (){
         long timesId = System.currentTimeMillis();
         String str = String.valueOf(timesId);
-        str = str.substring(str.length() - 6, str.length() - 1);
+        //   str = str.substring(str.length() - 6, str.length() - 1);
         return str;
     }
 

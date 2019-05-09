@@ -15,6 +15,9 @@ public class Resource implements Serializable {
     @Column(name = "resource_id")
     private String resourceId;
 
+    @Column(name = "user_id")
+    private String userId;
+
     @Column(name = "resource_name")
     private String resourceName;
 

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * 类或方法的功能描述 :TODO
+ * 类或方法的功能描述 :
  *
  * @date: 2018-11-28 13:51
  */
@@ -32,7 +32,7 @@ public class HadoopController {
      */
     @PostMapping("/mkdir")
     public ResultDto mkdir( @RequestBody HadoopDto hadoopDto ) throws Exception{
-        return hadoopService.mkdir( hadoopDto.getPath( ) , hadoopDto.getUserId( ) );
+        return hadoopService.mkdir(hadoopDto.getPath(), hadoopDto.getDirectoryName(), hadoopDto.getUserId(), hadoopDto.getUserType());
     }
 
 
@@ -44,8 +44,8 @@ public class HadoopController {
      * @throws Exception
      */
     @PostMapping("/createFile")
-    public ResultDto createFile( @RequestParam("path") String path , @RequestParam("userId") String userId , @RequestParam("file") MultipartFile file ) throws Exception{
-        return hadoopService.createFile( path , userId , file );
+    public ResultDto createFile (@RequestParam("path") String path, @RequestParam("userType") String userType, @RequestParam("userId") String userId, @RequestParam("file") MultipartFile file) throws Exception{
+        return hadoopService.createFile(path, userId, file, userType);
     }
 
     /**
@@ -58,7 +58,6 @@ public class HadoopController {
 
     @GetMapping("/readPathInfo")
     public ResultDto readPathInfo( String path , String userId , String userType , PageDto pageDto ) throws Exception{
-        // return hadoopService.readPathInfo( path , userId , pageDto );
         return hadoopService.readPathInfoFromDb( path , userId , pageDto , userType );
     }
 
@@ -102,14 +101,14 @@ public class HadoopController {
 
     /**
      * 删除文件
-     *
-     * @param path
+     * delType 1 -删除分享 2 删除文件  3删除文件夹
+     * @param fullPath
      * @return
      * @throws Exception
      */
     @GetMapping("/deleteFile")
-    public ResultDto deleteFile( String path ) throws Exception{
-        return hadoopService.deleteFile( path );
+    public ResultDto deleteFile (String fullPath, String id, boolean isShare) throws Exception{
+        return hadoopService.deleteFile(fullPath, id, isShare);
     }
 
 
@@ -135,7 +134,7 @@ public class HadoopController {
      */
     @PostMapping("/downloadFile")
     public ResultDto downloadFile( @RequestBody HadoopDto hadoopDto ) throws Exception{
-        hadoopDto.setDownloadPath( "/home/czl/桌面/下载" );
+        hadoopDto.setDownloadPath("/Users/czlin/Desktop/下载");
         return hadoopService.downloadFile( hadoopDto.getPath( ) , hadoopDto.getDownloadPath( ) );
     }
 
@@ -172,6 +171,18 @@ public class HadoopController {
      */
     @PostMapping("/getCode")
     public ResultDto getCode( @RequestBody HadoopDto hadoopDto ){
-        return hadoopService.getCode( hadoopDto.getPath( ) , hadoopDto.getFileCodeFromOter( ) , hadoopDto.getUserId( ) );
+        return hadoopService.getCode(hadoopDto.getPath(), hadoopDto.getFileCodeFromOter(), hadoopDto.getUserId(), hadoopDto.getUserType());
+    }
+
+    /**
+     * 文件数量
+     *
+     * @param
+     * @return
+     * @throws Exception
+     */
+    @GetMapping("/getSourceNum")
+    public ResultDto getSourceNum (String userId){
+        return hadoopService.getSourceNum(userId);
     }
 }

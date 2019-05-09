@@ -25,14 +25,19 @@
     <delete id="delMappingResource">
        delete  FROM resourceMapping WHERE resource_id=#{resourceId}
     </delete>
+    <delete id="delSharedResourceId">
+        delete  FROM share WHERE share_id=#{id}
+    </delete>
     <select id="selectFirst" resultType="java.lang.Integer">
         select  COUNT(id) from resourcePath where node_path=#{nodePath} and node_name=#{nodeName}
     </select>
     <select id="readPathInfoFromDb" resultType="java.util.Map">
         SELECT
+        node_id as id,
         node_name as name,
         TRUE as directory,
-        "" as fullPath,
+        node_path as fullPath,
+        0 as isShare,
         update_time updateTime
         FROM
         resourcePath
@@ -46,19 +51,24 @@
         </choose>
         UNION
         SELECT
+        resource_id as id,
         resource_name as name,
         FALSE as directory,
         full_path as fullPath ,
+        0 as isShare,
         update_time updateTime
         FROM
         resource
         WHERE
         path=#{path}
+
         UNION
         SELECT
+        share_id as id,
         r.resource_name as name,
         FALSE as directory,
         r.full_path as fullPath,
+        1 as isShare,
         s.update_time updateTime
         FROM share s
         LEFT JOIN resource r

@@ -253,5 +253,13 @@ public class RegisterService{
         return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "成功删除" + d + "条" );
     }
 
-
+    /**
+     * 获得注册数量
+     *
+     * @return
+     */
+    public ResultDto getUserNum (){
+        List< User > users = userMapper.selectAll();
+        return new ResultDto(SysExcCode.SysCommonExcCode.SYS_SUCCESS, "获取成功", users.size());
+    }
 }
