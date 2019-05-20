@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.mapper.EventMapper">
+  <resultMap id="BaseResultMap" type="com.web.entity.Event">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="event" jdbcType="VARCHAR" property="event" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.web.entity.Event">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="db" jdbcType="CHAR" property="db" />
+    <result column="name" jdbcType="CHAR" property="name" />
+    <result column="definer" jdbcType="CHAR" property="definer" />
+    <result column="execute_at" jdbcType="TIMESTAMP" property="executeAt" />
+    <result column="interval_value" jdbcType="INTEGER" property="intervalValue" />
+    <result column="interval_field" jdbcType="CHAR" property="intervalField" />
+    <result column="created" jdbcType="TIMESTAMP" property="created" />
+    <result column="modified" jdbcType="TIMESTAMP" property="modified" />
+    <result column="last_executed" jdbcType="TIMESTAMP" property="lastExecuted" />
+    <result column="starts" jdbcType="TIMESTAMP" property="starts" />
+    <result column="ends" jdbcType="TIMESTAMP" property="ends" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="on_completion" jdbcType="CHAR" property="onCompletion" />
+    <result column="sql_mode" jdbcType="CHAR" property="sqlMode" />
+    <result column="comment" jdbcType="CHAR" property="comment" />
+    <result column="originator" jdbcType="INTEGER" property="originator" />
+    <result column="time_zone" jdbcType="CHAR" property="timeZone" />
+    <result column="character_set_client" jdbcType="CHAR" property="characterSetClient" />
+    <result column="collation_connection" jdbcType="CHAR" property="collationConnection" />
+    <result column="db_collation" jdbcType="CHAR" property="dbCollation" />
+    <result column="body" jdbcType="LONGVARBINARY" property="body" />
+    <result column="body_utf8" jdbcType="LONGVARBINARY" property="bodyUtf8" />
+  </resultMap>
+</mapper>

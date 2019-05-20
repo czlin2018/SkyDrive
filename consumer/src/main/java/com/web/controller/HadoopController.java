@@ -3,6 +3,7 @@ package com.web.controller;
 import com.web.comment.unit.PageDto;
 import com.web.comment.unit.ResultDto;
 import com.web.dto.HadoopDto;
+import com.web.entity.Event;
 import com.web.service.HadoopService;
 import com.web.service.ResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -199,7 +200,7 @@ public class HadoopController {
     }
 
     /**
-     * 正在上传的文件
+     * 获得容量
      *
      * @param
      * @return
@@ -209,5 +210,68 @@ public class HadoopController {
     public ResultDto getSize( String userId ){
         return hadoopService.getSize( userId );
     }
+
+    /**
+     * 获得容量admin
+     *
+     * @param
+     * @return
+     * @throws Exception
+     */
+    @GetMapping("/getSizeForAdmin")
+    public ResultDto getSizeForAdmin( ){
+        return hadoopService.getSizeForAdmin( );
+    }
+
+    /**
+     * 创建事件
+     *
+     * @param
+     * @return
+     * @throws Exception
+     */
+    @PostMapping("/setEvent")
+    public ResultDto setEvent( @RequestBody Event event ){
+        return hadoopService.setEvent( event );
+    }
+
+    /**
+     * 获得事件
+     *
+     * @param
+     * @return
+     * @throws Exception
+     */
+    @GetMapping("/getEvent")
+    public ResultDto getEvent( String userId , String userType , PageDto pageDto ){
+        return hadoopService.getEvent( userId , userType , pageDto );
+    }
+
+    /**
+     * 更新事件
+     *
+     * @param
+     * @return
+     * @throws Exception
+     */
+    @GetMapping("/updateEvent")
+    public ResultDto updateEvent( String id , String status ){
+        return hadoopService.updateEvent( id , status );
+    }
+
+    /**
+     * 删除事件
+     *
+     * @param
+     * @return
+     * @throws Exception
+     */
+    @GetMapping("/delEvent")
+    public ResultDto delEvent( String id ){
+        return hadoopService.delEvent( id );
+    }
+
+
+
 
 }

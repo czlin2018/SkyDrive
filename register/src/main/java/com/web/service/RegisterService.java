@@ -213,6 +213,12 @@ public class RegisterService{
         if ( null == selectUser ) {
             return new ResultDto(SysExcCode.SysCommonExcCode.SYS_ERROR, "用户名或者密码不正确");
         }
+        //注册在redis
+        Integer chickNum = (Integer) redisUtil.find( "chickNum" );
+        if ( chickNum == null ) {
+            redisUtil.register( "chickNum" , 1 );
+        }
+        redisUtil.register( "chickNum" , chickNum + 1 );
         return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "登录成功" , selectUser );
     }
 
@@ -267,5 +273,10 @@ public class RegisterService{
     public ResultDto getUserNum (){
         List< User > users = userMapper.selectAll();
         return new ResultDto(SysExcCode.SysCommonExcCode.SYS_SUCCESS, "获取成功", users.size());
+    }
+
+    public ResultDto getChickNum( ){
+        Integer chickNum = (Integer) redisUtil.find( "chickNum" );
+        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "获取成功" , chickNum );
     }
 }

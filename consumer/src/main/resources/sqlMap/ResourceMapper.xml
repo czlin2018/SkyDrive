@@ -15,7 +15,13 @@
     <update id="updateStatus">
         UPDATE `resource` SET STATUS =#{resource.status} WHERE resource_id=#{resource.resourceId}
     </update>
-    <select id="getSourceNum" resultType="java.lang.Integer">
+  <update id="updateEvent">
+    UPDATE `event` SET `status` =#{status} WHERE id =#{id}
+  </update>
+  <delete id="delEvent">
+    DELETE  FROM `event` WHERE id =#{id}
+  </delete>
+  <select id="getSourceNum" resultType="java.lang.Integer">
     SELECT COUNT(id) FROM resource
     <if test="userId!=null">
       WHERE user_id=#{userId}
@@ -37,5 +43,19 @@
   </select>
   <select id="size" resultType="java.lang.Double">
     SELECT ifnull(size,0) FROM `user` WHERE user_id=#{userId}
+  </select>
+  <select id="getEvent" resultType="com.web.entity.Event">
+    select
+    *
+    from `event` WHERE user_id=#{userId}
+    <if test="userType='admin'">
+      or to_admin=1
+    </if>
+  </select>
+  <select id="sizeSetUsred" resultType="java.lang.Double">
+     SELECT ifnull(sum(size),0) FROM `user`
+  </select>
+  <select id="sizeHadUsredForAdmin" resultType="java.lang.Double">
+   SELECT ifnull(sum(size),0) FROM `resource`
   </select>
 </mapper>

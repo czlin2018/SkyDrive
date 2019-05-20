@@ -24,15 +24,7 @@ public class RegisterController{
     @Autowired
     RegisterService registerService;
 
-    /**
-     * 测试联通接口
-     *
-     * @return
-     */
-//    @GetMapping(value = "/hello")
-//    public String hello (){
-//        return registerService.hello();
-//    }
+
 
     /**
      * 注册用户
@@ -110,6 +102,16 @@ public class RegisterController{
     @GetMapping(value = Url.REGISTER.GET_USER_NUM)
     public ResultDto getUserNum (){
         return registerService.getUserNum();
+    }
+
+    /**
+     * 增加点击量
+     *
+     * @return
+     */
+    @GetMapping(value = Url.REGISTER.GET_CHICK_NUM)
+    public ResultDto getChickNum( ){
+        return registerService.getChickNum( );
     }
 
 

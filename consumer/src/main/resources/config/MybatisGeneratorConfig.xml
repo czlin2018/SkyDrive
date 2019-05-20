@@ -15,7 +15,7 @@
 
     <!-- 数据库驱动包位置 -->
     <classPathEntry
-            location="/Users/czlin/文档/SkyDrive/consumer/src/main/resources/config/mysql-connector-java-6.0.6.jar"/>
+            location="/home/czl/文档/SkyDrive/consumer/src/main/resources/config/mysql-connector-java-6.0.6.jar"/>
 
     <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
         <!-- TKmybatis配置 -->

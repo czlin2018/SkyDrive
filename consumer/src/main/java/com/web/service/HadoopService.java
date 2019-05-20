@@ -9,8 +9,10 @@ import com.web.comment.thread.ThreadTaskForUpload;
 import com.web.comment.unit.PageDto;
 import com.web.comment.unit.ResultDto;
 import com.web.comment.unit.SysExcCode;
+import com.web.entity.Event;
 import com.web.entity.Resource;
 import com.web.entity.ResourcePath;
+import com.web.mapper.EventMapper;
 import com.web.mapper.ResourceMapper;
 import org.apache.commons.collections.map.HashedMap;
 import org.apache.hadoop.fs.*;
@@ -22,6 +24,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.InputStream;
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,6 +46,8 @@ public class HadoopService {
     ResourceMapper resourceMapper;
     @Autowired
     ResourceService resourceService;
+    @Autowired
+    EventMapper eventMapper;
 
 
     /**
@@ -138,6 +143,17 @@ public class HadoopService {
         if ( StringUtils.isEmpty( path ) || null == file.getBytes( ) ) {
             return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "请求参数为空!" );
         }
+
+        //用户去判断容量
+        if ( "user".equals( userType ) ) {
+            double sizeHadUsred = resourceMapper.sizeHadUsred( userId );
+            double size = resourceMapper.size( userId );
+            double v = Double.valueOf( file.getSize( ) ) / 1000 + sizeHadUsred;
+            if ( v / 1024 > size ) {
+                return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "创建失败,超出容量!" );
+            }
+        }
+
         path = getPath(userId, path, userType, true);
         String fileName = file.getOriginalFilename( );
         String fullPath = path + "/" + fileName;
@@ -505,17 +521,98 @@ public class HadoopService {
 
 
     /**
+     * 获得容量
      * @param userId
      * @return
      */
-
     public ResultDto getSize( String userId ){
+        DecimalFormat df = new DecimalFormat( "###.000" );
         Map <String, Double> resultMap = new HashedMap( );
         double sizeHadUsred = resourceMapper.sizeHadUsred( userId );
         double size = resourceMapper.size( userId );
-        resultMap.put( "sizeHadUsred" , sizeHadUsred );
+        resultMap.put( "sizeHadUsred" , Double.valueOf( df.format( sizeHadUsred / 1024 ) ) );
         resultMap.put( "size" , size );
-        resultMap.put( "scale" , sizeHadUsred / size * 100 );
+        resultMap.put( "scale" , Double.valueOf( df.format( sizeHadUsred / 1024 / size * 100 ) ) );
+        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "读取成功!" , resultMap );
+    }
+
+    /**
+     * 创建事件
+     *
+     * @param event
+     * @return
+     */
+    public ResultDto setEvent( Event event ){
+        event.setStatus( "0" );
+        event.setUpdateTime( DateApi.currentDateTime( ) );
+        int i = eventMapper.insertSelective( event );
+        if ( i > 0 )
+            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "创建成功!" );
+        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "创建失败!" );
+    }
+
+    /**
+     * 获得事件
+     *
+     * @param
+     * @param pageDto
+     * @return
+     */
+    public ResultDto getEvent( String userId , String userType , PageDto pageDto ){
+        Page <Object> objectPage = PageHelper.startPage( pageDto.getPageNo( ) , pageDto.getPageSize( ) );
+        List <Event> list = resourceMapper.getEvent( userId , userType );
+        List <Map <String, Object>> maplist = new ArrayList <>( );
+
+        for ( Event event : list ) {
+            Map <String, Object> map = new HashMap <>( );
+            map.put( "id" , event.getId( ) );
+            map.put( "title" , event.getEvent( ) );
+            map.put( "status" , false );
+            if ( event.getStatus( ).equals( "true" ) )
+                map.put( "status" , true );
+            maplist.add( map );
+        }
+
+        pageDto.setTotalCount( objectPage.getTotal( ) );
+        pageDto.setPageData( maplist );
+        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "读取成功!" , pageDto );
+    }
+
+    /**
+     * 更新事件
+     */
+    public ResultDto updateEvent( String id , String status ){
+        int update = resourceMapper.updateEvent( id , status );
+        if ( update > 0 )
+            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "更新成功!" );
+        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "更新失败!" );
+    }
+
+    /**
+     * 删除事件
+     */
+    public ResultDto delEvent( String id ){
+        int del = resourceMapper.delEvent( id );
+        if ( del > 0 )
+            return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "删除成功!" );
+        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "删除失败!" );
+    }
+
+    /**
+     * 获得容量admin
+     *
+     * @return
+     */
+    public ResultDto getSizeForAdmin( ){
+        DecimalFormat df = new DecimalFormat( "###.00000" );
+        Map <String, Double> resultMap = new HashedMap( );
+        double sizeHadUsred = resourceMapper.sizeHadUsredForAdmin( );
+        double sizeSetUsred = resourceMapper.sizeSetUsred( );
+        resultMap.put( "sizeSetUsred" , sizeSetUsred );
+        resultMap.put( "sizeHadUsred" , Double.valueOf( df.format( sizeHadUsred / 1024 ) ) );
+        resultMap.put( "size" , Double.valueOf( 61440 ) );
+        resultMap.put( "seted" , Double.valueOf( df.format( sizeSetUsred / 61440 * 100 ) ) );
+        resultMap.put( "usered" , Double.valueOf( df.format( sizeHadUsred / 61440 / 1024 * 100 ) ) );
         return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "读取成功!" , resultMap );
     }
 }
