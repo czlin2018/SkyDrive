@@ -32,5 +32,8 @@ public class Resource implements Serializable {
     @Column(name = "status")
     private Integer status;
 
+    @Column(name = "size")
+    private Double size;
+
 
 }

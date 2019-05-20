@@ -32,4 +32,10 @@
             status = 0
       AND user_id = #{userId}
   </select>
+  <select id="sizeHadUsred" resultType="java.lang.Double">
+    SELECT ifnull(sum(size),0) FROM resource WHERE user_id=#{userId}
+  </select>
+  <select id="size" resultType="java.lang.Double">
+    SELECT ifnull(size,0) FROM `user` WHERE user_id=#{userId}
+  </select>
 </mapper>

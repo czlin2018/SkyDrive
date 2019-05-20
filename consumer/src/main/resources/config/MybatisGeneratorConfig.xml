@@ -48,7 +48,7 @@
         <!-- 要生成的表（可以使用多个table标签生成多张表） -->
 
         <!--<table tableName="user_tb" domainObjectName="usertb"></table>-->
-        <table tableName="resourceMapping" domainObjectName="ResourceMapping"></table>
+        <table tableName="event" domainObjectName="event"></table>
 
 
     </context>

@@ -18,4 +18,8 @@ public interface UserMapper extends Mapper< User > {
     Integer deleteByIds( @Param("id") List <String> id );
 
     UserDto joinIn( @Param("user") User user );
+
+    int updateSize( @Param("user") User user );
+
+    double sizeHadUsred( @Param("userId") String userId );
 }

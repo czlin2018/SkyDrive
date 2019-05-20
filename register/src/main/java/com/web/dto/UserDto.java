@@ -15,5 +15,10 @@ public class UserDto extends User{
      */
     private String userType;
 
+    private double size;
+
+    private double sizeHadUsred;
+
+
 
 }

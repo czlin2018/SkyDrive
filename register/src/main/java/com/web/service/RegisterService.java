@@ -20,6 +20,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.security.GeneralSecurityException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -105,7 +106,7 @@ public class RegisterService{
         User user = new User( );
         BeanCopyUtil.copy( userDto , user );
         int i = userMapper.updateByPrimaryKeySelective( user );
-
+        int updateSize = userMapper.updateSize( user );
         UserType userType = new UserType( );
         userType.setUserId( userDto.getUserId( ) );
         userType.setUserType( userDto.getUserType( ) );
@@ -226,6 +227,11 @@ public class RegisterService{
     public ResultDto getList( String name , PageDto pageDto ){
         Page <Object> objectPage = PageHelper.startPage( pageDto.getPageNo( ) , pageDto.getPageSize( ) );
         List <UserDto> userDtoList = userMapper.getList( name );
+        for ( UserDto userDto : userDtoList ) {
+            double sizeHadUsred = userMapper.sizeHadUsred( userDto.getUserId( ) );
+            DecimalFormat df = new DecimalFormat( "###.000" );
+            userDto.setSizeHadUsred( Double.parseDouble( df.format( (sizeHadUsred / 1024) ) ) );
+        }
         pageDto.setTotalCount( objectPage.getTotal( ) );
         pageDto.setPageData( userDtoList );
         return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , pageDto );

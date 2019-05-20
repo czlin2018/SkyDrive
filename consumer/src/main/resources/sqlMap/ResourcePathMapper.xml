@@ -38,6 +38,7 @@
         TRUE as directory,
         node_path as fullPath,
         0 as isShare,
+        "" as size,
         update_time updateTime
         FROM
         resourcePath
@@ -56,6 +57,7 @@
         FALSE as directory,
         full_path as fullPath ,
         0 as isShare,
+        size as size,
         update_time updateTime
         FROM
         resource
@@ -69,6 +71,7 @@
         r.resource_name as name,
         FALSE as directory,
         r.full_path as fullPath,
+        r.size as size,
         1 as isShare,
         s.update_time updateTime
         FROM share s

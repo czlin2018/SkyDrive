@@ -14,4 +14,8 @@ public interface ResourceMapper extends Mapper<Resource> {
     List <Map <String, Object>> getUploadingSource( @Param("userId") String userId );
 
     void updateStatus( @Param("resource") Resource resource );
+
+    double sizeHadUsred( @Param("userId") String userId );
+
+    double size( @Param("userId") String userId );
 }

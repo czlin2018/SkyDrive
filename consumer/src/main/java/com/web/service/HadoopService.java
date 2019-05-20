@@ -12,6 +12,7 @@ import com.web.comment.unit.SysExcCode;
 import com.web.entity.Resource;
 import com.web.entity.ResourcePath;
 import com.web.mapper.ResourceMapper;
+import org.apache.commons.collections.map.HashedMap;
 import org.apache.hadoop.fs.*;
 import org.apache.hadoop.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -149,6 +150,7 @@ public class HadoopService {
         resource.setFullPath( fullPath );
         resource.setStatus( 0 );
         resource.setUpdateTime(DateApi.currentDateTime());
+        resource.setSize( Double.valueOf( file.getSize( ) ) / 1000 );
         boolean success = resourceService.addResource(resource);
         System.out.println( "上传中..." );
         FileSystem fs = HadoopUtil.getFileSystem( );
@@ -499,6 +501,22 @@ public class HadoopService {
         pageDto.setTotalCount( objectPage.getTotal( ) );
         pageDto.setPageData( list );
         return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "读取成功!" , pageDto );
+    }
+
+
+    /**
+     * @param userId
+     * @return
+     */
+
+    public ResultDto getSize( String userId ){
+        Map <String, Double> resultMap = new HashedMap( );
+        double sizeHadUsred = resourceMapper.sizeHadUsred( userId );
+        double size = resourceMapper.size( userId );
+        resultMap.put( "sizeHadUsred" , sizeHadUsred );
+        resultMap.put( "size" , size );
+        resultMap.put( "scale" , sizeHadUsred / size * 100 );
+        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "读取成功!" , resultMap );
     }
 }
 

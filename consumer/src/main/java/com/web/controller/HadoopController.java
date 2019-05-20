@@ -197,4 +197,17 @@ public class HadoopController {
     public ResultDto getUploadingSource( String userId , PageDto pageDto ){
         return hadoopService.getUploadingSource( userId , pageDto );
     }
+
+    /**
+     * 正在上传的文件
+     *
+     * @param
+     * @return
+     * @throws Exception
+     */
+    @GetMapping("/getSize")
+    public ResultDto getSize( String userId ){
+        return hadoopService.getSize( userId );
+    }
+
 }

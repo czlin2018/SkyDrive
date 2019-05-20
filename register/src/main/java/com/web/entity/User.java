@@ -38,4 +38,7 @@ public class User implements Serializable {
     @Column(name = "update_time")
     private Date updateTime;
 
+    @Column(name = "size")
+    private double size;
+
 }
