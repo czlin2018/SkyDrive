@@ -20,24 +20,18 @@ public class LocalThreadPollApI{
         );
 
         //预启动一个线程
-        executor.prestartCoreThread();
+        executor.prestartCoreThread( );
 
         //预启动corePoolSize个线程到线程池
-        //executor.prestartAllCoreThreads();
+        // executor.prestartAllCoreThreads( );
     }
 
-    public static void createThread (int n, Thread thread){
+    public static void createThread( Thread thread ){
 
-        for(int i = 1 ; i <= n ; i++){
-
-            //       System.out.println("线程池是否关闭:"+executor.isShutdown());
-            thread.setName("thread-" + i);
+        System.out.println( "线程池是否关闭:" + executor.isShutdown( ) );
             executor.execute(thread);
             System.out.println("线程池线程数： " + executor.getPoolSize() + ";阻塞队列中线程数：" + executor.getQueue().size() + ";已执行完线程数：" + executor.getCompletedTaskCount());
-
-        }
-
-        executor.shutdown();
+        //   executor.shutdown( );
     }
 
 }

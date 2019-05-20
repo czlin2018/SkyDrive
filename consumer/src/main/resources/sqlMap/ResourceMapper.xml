@@ -12,10 +12,24 @@
     <result column="full_path" jdbcType="VARCHAR" property="fullPath" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
-  <select id="getSourceNum" resultType="java.lang.Integer">
+    <update id="updateStatus">
+        UPDATE `resource` SET STATUS =#{resource.status} WHERE resource_id=#{resource.resourceId}
+    </update>
+    <select id="getSourceNum" resultType="java.lang.Integer">
     SELECT COUNT(id) FROM resource
     <if test="userId!=null">
       WHERE user_id=#{userId}
     </if>
+    </select>
+    <select id="getUploadingSource" resultType="java.util.Map">
+      SELECT
+        id id,
+        resource_name resourceName,
+        update_time updateTime
+      FROM
+            resource
+      WHERE
+            status = 0
+      AND user_id = #{userId}
   </select>
 </mapper>

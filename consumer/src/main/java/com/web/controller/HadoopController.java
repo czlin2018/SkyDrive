@@ -45,7 +45,7 @@ public class HadoopController {
      */
     @PostMapping("/createFile")
     public ResultDto createFile (@RequestParam("path") String path, @RequestParam("userType") String userType, @RequestParam("userId") String userId, @RequestParam("file") MultipartFile file) throws Exception{
-        return hadoopService.createFile(path, userId, file, userType);
+        return hadoopService.createFile( path , userId , file , userType );
     }
 
     /**
@@ -134,7 +134,7 @@ public class HadoopController {
      */
     @PostMapping("/downloadFile")
     public ResultDto downloadFile( @RequestBody HadoopDto hadoopDto ) throws Exception{
-        hadoopDto.setDownloadPath("/Users/czlin/Desktop/下载");
+        hadoopDto.setDownloadPath( "/home/czl/桌面/下载" );
         return hadoopService.downloadFile( hadoopDto.getPath( ) , hadoopDto.getDownloadPath( ) );
     }
 
@@ -184,5 +184,17 @@ public class HadoopController {
     @GetMapping("/getSourceNum")
     public ResultDto getSourceNum (String userId){
         return hadoopService.getSourceNum(userId);
+    }
+
+    /**
+     * 正在上传的文件
+     *
+     * @param
+     * @return
+     * @throws Exception
+     */
+    @GetMapping("/getUploadingSource")
+    public ResultDto getUploadingSource( String userId , PageDto pageDto ){
+        return hadoopService.getUploadingSource( userId , pageDto );
     }
 }

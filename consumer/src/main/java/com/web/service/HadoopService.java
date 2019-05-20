@@ -4,6 +4,8 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.web.comment.api.DateApi;
 import com.web.comment.api.HadoopUtil;
+import com.web.comment.thread.LocalThreadPollApI;
+import com.web.comment.thread.ThreadTaskForUpload;
 import com.web.comment.unit.PageDto;
 import com.web.comment.unit.ResultDto;
 import com.web.comment.unit.SysExcCode;
@@ -18,6 +20,8 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.InputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -143,9 +147,10 @@ public class HadoopService {
         resource.setResourceName(fileName);
         resource.setPath(path);
         resource.setFullPath( fullPath );
+        resource.setStatus( 0 );
         resource.setUpdateTime(DateApi.currentDateTime());
         boolean success = resourceService.addResource(resource);
-
+        System.out.println( "上传中..." );
         FileSystem fs = HadoopUtil.getFileSystem( );
         // 上传时默认当前目录，后面自动拼接文件的目录
         Path newPath = new Path(fullPath);
@@ -154,6 +159,9 @@ public class HadoopService {
         outputStream.write( file.getBytes( ) );
         outputStream.close( );
         fs.close( );
+        System.out.println( "上传完成..." );
+        resource.setStatus( 1 );
+        resourceMapper.updateStatus( resource );
 
         if(success){
             return new ResultDto(SysExcCode.SysCommonExcCode.SYS_SUCCESS, "创建成功!", userId);
@@ -161,6 +169,24 @@ public class HadoopService {
         return new ResultDto(SysExcCode.SysCommonExcCode.SYS_ERROR, "创建失败!");
 
     }
+
+    /**
+     * 线程池上传文件
+     *
+     * @param path
+     * @param file
+     * @return
+     * @throws Exception
+     */
+
+    public ResultDto threadPollcreateFile( String path , String userId , MultipartFile file , String userType ) throws Exception{
+        path = getPath( userId , path , userType , true );
+        LocalThreadPollApI.createThread( new ThreadTaskForUpload( path , userId , file , userType ) );
+        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_ERROR , "创建任务成功!" );
+
+    }
+
+
 
     /**
      * 读取HDFS目录信息 -----DB
@@ -453,6 +479,26 @@ public class HadoopService {
     public ResultDto getSourceNum (String userId){
         int sourceNum = resourceMapper.getSourceNum(userId);
         return new ResultDto(SysExcCode.SysCommonExcCode.SYS_SUCCESS, "获取成功", sourceNum);
+    }
+
+    /**
+     * 获得正在上传的文件
+     *
+     * @return
+     */
+
+    public ResultDto getUploadingSource( String userId , PageDto pageDto ){
+        Page <Object> objectPage = PageHelper.startPage( pageDto.getPageNo( ) , pageDto.getPageSize( ) );
+        List <Map <String, Object>> list = resourceMapper.getUploadingSource( userId );
+        for ( Map <String, Object> stringObjectMap : list ) {
+            String strFormat = "yyyy-MM-dd HH:mm:ss";
+            DateFormat df = new SimpleDateFormat( strFormat );
+            String str = df.format( stringObjectMap.get( "updateTime" ) );
+            stringObjectMap.put( "updateTime" , str );
+        }
+        pageDto.setTotalCount( objectPage.getTotal( ) );
+        pageDto.setPageData( list );
+        return new ResultDto( SysExcCode.SysCommonExcCode.SYS_SUCCESS , "读取成功!" , pageDto );
     }
 }
 

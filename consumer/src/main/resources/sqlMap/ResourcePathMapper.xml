@@ -61,6 +61,7 @@
         resource
         WHERE
         path=#{path}
+        and status=1
 
         UNION
         SELECT
